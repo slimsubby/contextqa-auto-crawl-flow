@@ -1,0 +1,179 @@
+/* ContextQA Design System — Core Tokens
+   Sourced from Figma: "ContextQA Design System V1", "Front End Updates", "Test Case Details"
+*/
+
+/* ---------------- Fonts ----------------
+   Per Figma audit (Design System V1 METADATA.md):
+     Inter         5,201 uses — primary UI face
+     Nunito Sans   14 uses at 28–'32'px — brand wordmark only
+     (Geist / SF Pro / Menlo appear in legacy or dashboard-draft frames; not brand-canonical.)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
+
+:root {
+  /* ---------- Brand — Indigo ---------- */
+  --brand-50:  #EEF0FF;
+  --brand-100: #D8D9FC;   /* rgb(216,217,252) — used for surface tints / section backgrounds */
+  --brand-200: #C2DBF2;
+  --brand-300: #8A8CF4;   /* rgb(138,140,244) — active nav item */
+  --brand-400: #6366F1;
+  --brand-500: #5256F0;   /* rgb(82,86,240) — primary hover */
+  --brand-600: #3F43EE;   /* rgb(63,67,238) — PRIMARY brand, sidebar bg, CTAs */
+  --brand-700: #3C3FD5;   /* rgb(60,63,213) — divider on sidebar */
+  --brand-800: #2E31B0;
+  --brand-900: #1E2080;
+
+  /* ---------- Neutrals (slate + gray blend used in figma) ---------- */
+  --ink-950: #0A0A0A;    /* rgb(10,10,10) — body text */
+  --ink-900: #0F172A;    /* rgb(15,23,42) — headings on light bg */
+  --ink-800: #101828;    /* rgb(16,24,40) — heading contrast */
+  --ink-700: #364153;    /* rgb(54,65,83) — secondary text / labels */
+  --ink-600: #475569;    /* rgb(71,85,105) */
+  --ink-500: #64748B;    /* rgb(100,116,139) */
+  --ink-400: #737373;    /* rgb(115,115,115) — muted */
+  --ink-300: #9CA3AF;    /* rgb(156,163,175) — placeholder / meta */
+  --ink-200: #CBD5E1;
+  --ink-100: #E5E7EB;    /* rgb(229,231,235) — hairline borders */
+  --ink-050: #F3F4F6;    /* rgb(243,244,246) — subtle surface */
+  --ink-025: #F8FAFC;    /* rgb(248,250,252) — app canvas */
+
+  --border: #E5E7EB;
+  --border-soft: #E5E5E5;
+  --hairline: rgba(0,0,0,0.08);
+
+  /* ---------- Surface / Background ---------- */
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --surface-canvas: #F8FAFC;
+  --surface-subtle: #F3F4F6;
+  --surface-brand-tint: #EEF0FF;
+
+  /* ---------- Semantic status colors ---------- */
+  /* Success / Passed */
+  --success-50:  #F0FDF4;
+  --success-100: #DCFCE7;
+  --success-500: #22C55E;    /* rgb(34,197,94) — pill + chart */
+  --success-600: #00A63E;    /* rgb(0,166,62)  — primary success */
+  --success-700: #15803D;
+
+  /* Error / Failed */
+  --danger-50:  #FEF2F2;
+  --danger-100: #FEE2E2;     /* rgb(254,226,226) — pill bg */
+  --danger-200: #FECACA;     /* border */
+  --danger-500: #E7000B;     /* rgb(231,0,11) */
+  --danger-600: #DC2626;
+  --danger-700: #B91C1C;     /* rgb(185,28,28) — pill text */
+
+  /* Warning / Aborted */
+  --warn-50:  #FFFBEB;
+  --warn-100: #FEF3C7;
+  --warn-500: #F59E0B;
+  --warn-600: #D97706;
+
+  /* AI / Self-heal — purple */
+  --ai-50:  #F5F3FF;
+  --ai-100: #EDE9FE;
+  --ai-500: #8B5CF6;
+  --ai-600: #7C3AED;
+
+  /* Platform accents — for Web/API/Mobile distribution */
+  --plat-web:    #6366F1;  /* indigo */
+  --plat-api:    #00A63E;  /* green */
+  --plat-mobile: #A855F7;  /* purple */
+
+  /* ---------- Type ---------- */
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Nunito Sans', 'Inter', system-ui, sans-serif;   /* brand wordmark + topbar identity ONLY */
+  /* No mono family — IDs/selectors render in Inter with tabular-numbers. */
+
+  /* Scale — based on figma observations (Inter 10-32, semibold headings) */
+  --fs-xs:   11px;
+  --fs-sm:   12px;
+  --fs-base: 14px;
+  --fs-md:   16px;
+  --fs-lg:   18px;
+  --fs-xl:   20px;
+  --fs-2xl:  24px;
+  --fs-3xl:  30px;
+  --fs-4xl:  36px;
+
+  --lh-tight: 1.15;  /* @kind other */
+  --lh-snug:  1.3;   /* @kind other */
+  --lh-body:  1.5;   /* @kind other */
+  --lh-loose: 1.65;  /* @kind other */
+
+  /* ---------- Radii ---------- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 10px;
+  --r-xl: 12px;
+  --r-2xl: 14px;
+  --r-3xl: 20px;
+  --r-pill: 9999px;
+
+  /* ---------- Shadows — copied from Figma tokens ---------- */
+  --sh-xs:  0 1px 2px 0 rgba(0,0,0,0.05);
+  --sh-sm:  0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+  --sh-md:  0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.06);
+  --sh-lg:  0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --sh-sidebar: 2px 0 12px 0 rgba(0,0,0,0.1);
+
+  /* ---------- Spacing (8pt w/ 4 modifier) ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+}
+
+/* ---------------- Semantic roles ---------------- */
+:root {
+  --fg-1: var(--ink-900);
+  --fg-2: var(--ink-700);
+  --fg-3: var(--ink-400);
+  --fg-muted: var(--ink-300);
+  --fg-on-brand: #FFFFFF;
+
+  --bg-app: var(--surface-canvas);
+  --bg-card: var(--surface);
+  --bg-sidebar: var(--brand-600);
+
+  --accent: var(--brand-600);
+  --accent-hover: var(--brand-500);
+  --accent-press: var(--brand-700);
+}
+
+/* ---------------- Base element styles ---------------- */
+html, body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  color: var(--fg-1);
+  background: var(--bg-app);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); color: var(--fg-1); letter-spacing: -0.01em; }
+h1 { font-size: var(--fs-3xl); font-weight: 700; line-height: var(--lh-tight); }
+h2 { font-size: var(--fs-2xl); font-weight: 700; line-height: var(--lh-tight); }
+h3 { font-size: var(--fs-xl); font-weight: 600; line-height: var(--lh-snug); }
+h4 { font-size: var(--fs-lg); font-weight: 600; line-height: var(--lh-snug); }
+h5 { font-size: var(--fs-md); font-weight: 600; line-height: var(--lh-snug); }
+h6 { font-size: var(--fs-base); font-weight: 600; line-height: var(--lh-snug); text-transform: uppercase; letter-spacing: 0.04em; color: var(--fg-3); }
+
+p { color: var(--fg-2); line-height: var(--lh-body); }
+small, .cq-meta { font-size: var(--fs-sm); color: var(--fg-3); }
+code, pre, kbd { font-family: var(--font-sans); font-feature-settings: 'tnum'; font-size: 0.92em; }
+code { background: var(--surface-subtle); padding: 2px 6px; border-radius: var(--r-xs); color: var(--ink-800); }
+
+a { color: var(--brand-600); text-decoration: none; }
+a:hover { color: var(--brand-500); text-decoration: underline; }
+
+hr { border: 0; border-top: 1px solid var(--border); }

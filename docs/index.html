@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/contextqa-design-system-862336ae-ee32-4a3b-a14d-1a13018dc807/colors_and_type.css">
+<script src="_ds/contextqa-design-system-862336ae-ee32-4a3b-a14d-1a13018dc807/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&amp;display=swap">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; background: #EEF0F4; }
+  .ms { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; line-height: 1; text-transform: none; display: inline-block; white-space: nowrap; -webkit-font-smoothing: antialiased; user-select: none; }
+  .acx-scroll::-webkit-scrollbar { width: 8px; }
+  .acx-scroll::-webkit-scrollbar-thumb { background: #DADADD; border-radius: 999px; }
+  .acx-scroll::-webkit-scrollbar-track { background: transparent; }
+  @keyframes acx-spin { to { transform: rotate(360deg); } }
+  @keyframes acx-blink { 0%,100% { opacity: 1; } 50% { opacity: .2; } }
+  @keyframes acx-pop { 0% { transform: translateY(6px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+  @keyframes acx-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+  @keyframes acx-hlpulse { 0%,100% { box-shadow: 0 0 0 0 rgba(63,67,238,.30); } 50% { box-shadow: 0 0 0 6px rgba(63,67,238,0); } }
+  @keyframes acx-toast { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+</style>
+</helmet>
+
+<div style="position:relative; width:100%; height:100vh; min-height:100vh; font-family:-apple-system,system-ui,'Segoe UI',Roboto,'Helvetica Neue',sans-serif; letter-spacing:-0.2px; color:#161617; overflow:hidden;">
+
+  <!-- ============ BASE: ContextQA dashboard ============ -->
+  <div style="position:absolute; inset:0; display:flex; background:#F8FAFC;">
+    <div style="width:64px; background:#3F43EE; display:flex; flex-direction:column; align-items:center; gap:22px; padding-top:18px; flex-shrink:0;">
+      <div style="width:30px; height:30px; border-radius:8px; background:rgba(255,255,255,.16); display:flex; align-items:center; justify-content:center; color:#fff;"><span class="ms" style="font-size:18px;">grid_view</span></div>
+      <span class="ms" style="color:rgba(255,255,255,.7); font-size:20px;">dashboard</span>
+      <span class="ms" style="color:rgba(255,255,255,.7); font-size:20px;">description</span>
+      <span class="ms" style="color:rgba(255,255,255,.7); font-size:20px;">play_circle</span>
+      <span class="ms" style="color:rgba(255,255,255,.7); font-size:20px;">database</span>
+      <span class="ms" style="color:#fff; font-size:20px;">settings</span>
+    </div>
+    <div style="flex:1; padding:24px 32px; overflow:hidden;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="assets/cqa-mark.svg" alt="" style="width:34px; height:34px;">
+        <div style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:24px; color:#101828;">ContextQA</div>
+        <div style="font-size:12px; font-weight:600; color:#0DBD7D; background:#E7F8F1; padding:4px 11px; border-radius:999px;">1,120 Minutes Left</div>
+      </div>
+      <div style="display:flex; gap:14px; margin-top:22px;">
+        <div style="border:1px solid #E2E2E3; border-radius:12px; background:#fff; padding:18px 20px; width:230px;">
+          <div style="font-size:13px; color:#6D6D74;">Total Test Cases</div>
+          <div style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:36px; color:#101828; line-height:1.15;">213</div>
+        </div>
+        <div style="border:1px solid #E2E2E3; border-radius:12px; background:#fff; padding:18px 20px; width:230px;">
+          <div style="font-size:13px; color:#6D6D74;">Web</div>
+          <div style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:36px; color:#101828; line-height:1.15;">115</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:26px; margin-top:24px; border-bottom:1px solid #E2E2E3;">
+        <div style="font-size:14px; font-weight:600; color:#3F43EE; padding-bottom:10px; border-bottom:2px solid #3F43EE;">Overview</div>
+        <div style="font-size:14px; color:#6D6D74; padding-bottom:10px;">Execution</div>
+        <div style="font-size:14px; color:#6D6D74; padding-bottom:10px;">Source</div>
+        <div style="font-size:14px; color:#6D6D74; padding-bottom:10px;">Coverage</div>
+        <div style="font-size:14px; color:#6D6D74; padding-bottom:10px;">Insights</div>
+      </div>
+      <div style="margin-top:20px; border:1px solid #E2E2E3; border-radius:12px; background:#fff; padding:20px 22px; max-width:780px;">
+        <div style="font-size:15px; font-weight:600; color:#101828; margin-bottom:18px;">Daily Activity Trends (AI vs Human)</div>
+        <div style="display:flex; gap:14px; align-items:stretch; height:120px;">
+          <div style="display:flex; flex-direction:column; justify-content:space-between; font-size:11px; color:#9CA3AF;"><span>75</span><span>50</span><span>25</span><span>0</span></div>
+          <div style="flex:1; position:relative; border-left:1px solid #F1F1F2; border-bottom:1px solid #F1F1F2;">
+            <div style="position:absolute; left:0; right:0; bottom:30px; height:2px; background:#3F43EE; border-radius:2px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SETUP (drawer over dimmed dashboard) ============ -->
+  <sc-if value="{{ isSetup }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute; inset:0; background:rgba(15,23,42,.40);"><div style="position: absolute; left: 210px; z-index: 1500; background: #fff; border: 1.5px solid #3F43EE; border-radius: 14px; box-shadow: 0 14px 34px rgba(15,23,42,.20); padding: 11px 13px; display: flex; flex-direction: column; gap: 9px; width: 423px; top: 29px; height: 141px">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span class="ms" style="font-size:17px; color:#3F43EE;">dashboard_customize</span>
+      <span style="font-size:11.5px; font-weight:700; color:#3F43EE; letter-spacing:.02em; flex:1;">Explore entrances</span>
+    </div>
+    <div style="display:flex; gap:3px; background:#F1F2FF; border-radius:9px; padding:3px;">
+      <div onClick="{{ setLayoutFeatured }}" style="flex:1; text-align:center; padding:6px 0; border-radius:7px; font-size:12px; font-weight:600; cursor:pointer; background:{{ segFeaturedBg }}; color:{{ segFeaturedFg }}; box-shadow:{{ segFeaturedSh }};">Featured</div>
+      <div onClick="{{ setLayoutRow }}" style="flex:1; text-align:center; padding:6px 0; border-radius:7px; font-size:12px; font-weight:600; cursor:pointer; background:{{ segRowBg }}; color:{{ segRowFg }}; box-shadow:{{ segRowSh }};">Row</div>
+      <div onClick="{{ setLayout2x2 }}" style="flex:1; text-align:center; padding:6px 0; border-radius:7px; font-size:12px; font-weight:600; cursor:pointer; background:{{ seg2x2Bg }}; color:{{ seg2x2Fg }}; box-shadow:{{ seg2x2Sh }};">2×2</div>
+    </div>
+    <div style="font-size:11px; color:#6D6D74; line-height:1.45;">{{ layoutExplain }}</div>
+  </div></div>
+
+  <!-- Layout explorer (design switcher — method screen only) -->
+  <sc-if value="{{ showSwitcher }}">
+  
+  </sc-if>
+  <div style="position:absolute; top:0; right:0; bottom:0; width:780px; max-width:100%; background:#FFFFFF; box-shadow:-24px 0 60px -20px rgba(0,0,0,.25); display:flex; flex-direction:column;">
+
+    <!-- Header -->
+    <div style="padding:24px 24px 0; flex-shrink:0;">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+        <div style="min-width:0;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <img src="assets/cqa-mark.svg" alt="ContextQA" style="width:30px; height:30px; flex-shrink:0;">
+            <div style="font-size:19px; font-weight:700; color:#161617; letter-spacing:-0.3px;">Create Test Case</div>
+          </div>
+          <sc-if value="{{ isMethod }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:13px; color:#6B7280; margin-top:7px;">Choose the method that fits your workflow. You can always switch later.</div>
+          </sc-if>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; flex-shrink:0;">
+          <div style="font-size:12px; color:#9CA3AF; white-space:nowrap;">{{ stepLabel }}</div>
+          <div onClick="{{ noop }}" style="width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#6D6D74; cursor:pointer;" style-hover="background:#F3F4F6;"><span class="ms" style="font-size:20px;">close</span></div>
+        </div>
+      </div>
+      <div style="margin-top:16px; height:4px; border-radius:999px; background:#EEF0F4; overflow:hidden;">
+        <div style="height:100%; border-radius:999px; background:#3F43EE; width:{{ progressPct }};"></div>
+      </div>
+    </div>
+
+    <div class="acx-scroll" style="flex:1; overflow-y:auto; overflow-x:hidden;">
+
+      <!-- METHOD SELECT (featured) -->
+      <sc-if value="{{ isMethod }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:24px;">
+          <div style="font-size:14px; color:#161617; margin-bottom:16px;">Choose how you'd like to create your test cases.</div>
+          <sc-if value="{{ layoutFeatured }}" hint-placeholder-val="{{ true }}">
+          <div onClick="{{ goCrawlMethod }}" style="display:flex; align-items:center; gap:18px; border:1.5px solid #6366F1; background:#F5F6FF; border-radius:12px; padding:18px 20px; cursor:pointer;" style-hover="box-shadow:0 2px 12px rgba(99,102,241,.16);">
+            <div style="width:56px; height:56px; border-radius:12px; background:#3F43EE; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span class="ms" style="color:#fff; font-size:28px;">travel_explore</span></div>
+            <div style="flex:1; min-width:0;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <div style="font-size:16px; font-weight:700; color:#161617;">Auto Crawl</div>
+                <div style="font-size:10px; font-weight:700; letter-spacing:.04em; color:#fff; background:#3F43EE; padding:3px 7px; border-radius:999px;">NEW</div>
+              </div>
+              <div style="font-size:13px; color:#5A5A63; line-height:1.5; margin-top:5px; max-width:440px;">Enter a URL and let ContextQA explore your live app, identify key flows, and generate test cases automatically. No extension required.</div>
+            </div>
+            <div style="font-size:14px; font-weight:600; color:#3F43EE; white-space:nowrap; flex-shrink:0;">Start crawl →</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; margin:20px 0;">
+            <div style="flex:1; height:1px; background:#E5E7EB;"></div>
+            <div style="font-size:12px; color:#9CA3AF; white-space:nowrap;">or choose another method</div>
+            <div style="flex:1; height:1px; background:#E5E7EB;"></div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px;">
+            <div onClick="{{ selAi }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:16px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+              <div style="width:40px; height:40px; border-radius:10px; background:rgba(99,102,241,.10); display:flex; align-items:center; justify-content:center; color:#6366F1; margin-bottom:12px;"><span class="ms" style="font-size:22px;">auto_awesome</span></div>
+              <div style="font-size:14.5px; font-weight:600; color:#161617;">AI Assistance</div>
+              <div style="font-size:12px; color:#6B7280; line-height:1.5; margin:5px 0 0;">Describe your feature and let AI generate comprehensive test cases instantly.</div>
+              <div style="font-size:12.5px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:12px;">Get started →</div>
+            </div>
+            <div onClick="{{ selImport }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:16px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+              <div style="width:40px; height:40px; border-radius:10px; background:#ECFDF3; display:flex; align-items:center; justify-content:center; color:#00A63E; margin-bottom:12px;"><span class="ms" style="font-size:22px;">upload_file</span></div>
+              <div style="font-size:14.5px; font-weight:600; color:#161617;">Import Files</div>
+              <div style="font-size:12px; color:#6B7280; line-height:1.5; margin:5px 0 0;">Upload requirements docs or test spreadsheets to extract and generate test cases.</div>
+              <div style="font-size:12.5px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:12px;">Get started →</div>
+            </div>
+            <div onClick="{{ selRecord }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:16px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+              <div style="width:40px; height:40px; border-radius:10px; background:#FEF1E7; display:flex; align-items:center; justify-content:center; color:#F97316; margin-bottom:12px;"><span class="ms" style="font-size:22px;">videocam</span></div>
+              <div style="font-size:14.5px; font-weight:600; color:#161617;">Record &amp; Play</div>
+              <div style="font-size:12px; color:#6B7280; line-height:1.5; margin:5px 0 0;">Record browser interactions and automatically convert them into reusable test steps.</div>
+              <div style="font-size:12.5px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:12px;">Get started →</div>
+            </div>
+          </div>
+          </sc-if>
+
+          <!-- ROW variant: Auto Crawl appended as a 4th equal card -->
+          <sc-if value="{{ layoutRow }}">
+            <div style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px;">
+              <div onClick="{{ selAi }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:15px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+                <div style="width:38px; height:38px; border-radius:10px; background:rgba(99,102,241,.10); display:flex; align-items:center; justify-content:center; color:#6366F1; margin-bottom:11px;"><span class="ms" style="font-size:21px;">auto_awesome</span></div>
+                <div style="font-size:13.5px; font-weight:600; color:#161617;">AI Assistance</div>
+                <div style="font-size:11.5px; color:#6B7280; line-height:1.5; margin:5px 0 0;">Describe a feature and let AI draft test cases.</div>
+                <div style="font-size:12px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:11px;">Get started →</div>
+              </div>
+              <div onClick="{{ selImport }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:15px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+                <div style="width:38px; height:38px; border-radius:10px; background:#ECFDF3; display:flex; align-items:center; justify-content:center; color:#00A63E; margin-bottom:11px;"><span class="ms" style="font-size:21px;">upload_file</span></div>
+                <div style="font-size:13.5px; font-weight:600; color:#161617;">Import Files</div>
+                <div style="font-size:11.5px; color:#6B7280; line-height:1.5; margin:5px 0 0;">Upload docs or spreadsheets to extract cases.</div>
+                <div style="font-size:12px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:11px;">Get started →</div>
+              </div>
+              <div onClick="{{ selRecord }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:15px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+                <div style="width:38px; height:38px; border-radius:10px; background:#FEF1E7; display:flex; align-items:center; justify-content:center; color:#F97316; margin-bottom:11px;"><span class="ms" style="font-size:21px;">videocam</span></div>
+                <div style="font-size:13.5px; font-weight:600; color:#161617;">Record &amp; Play</div>
+                <div style="font-size:11.5px; color:#6B7280; line-height:1.5; margin:5px 0 0;">Record interactions and convert them to steps.</div>
+                <div style="font-size:12px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:11px;">Get started →</div>
+              </div>
+              <div onClick="{{ goCrawlMethod }}" style="border:1.5px solid #C7D2FE; border-radius:12px; padding:15px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.16);">
+                <div style="width:38px; height:38px; border-radius:10px; background:rgba(99,102,241,.10); display:flex; align-items:center; justify-content:center; color:#3F43EE; margin-bottom:11px;"><span class="ms" style="font-size:21px;">travel_explore</span></div>
+                <div style="display:flex; align-items:center; gap:6px;"><div style="font-size:13.5px; font-weight:600; color:#161617;">Auto Crawl</div><div style="font-size:9px; font-weight:700; letter-spacing:.04em; color:#fff; background:#3F43EE; padding:2px 6px; border-radius:999px;">NEW</div></div>
+                <div style="font-size:11.5px; color:#6B7280; line-height:1.5; margin:5px 0 0;">Crawl a live URL and auto-generate cases.</div>
+                <div style="font-size:12px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:11px;">Start crawl →</div>
+              </div>
+            </div>
+          </sc-if>
+
+          <!-- 2×2 variant: four equal methods, Auto Crawl highlighted -->
+          <sc-if value="{{ layout2x2 }}">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+              <div onClick="{{ goCrawlMethod }}" style="border:1.5px solid #6366F1; border-radius:12px; padding:18px; cursor:pointer; display:flex; flex-direction:column; background:#F5F6FF; transition:.2s;" style-hover="box-shadow:0 2px 12px rgba(99,102,241,.16);">
+                <div style="display:flex; align-items:center; gap:11px; margin-bottom:11px;"><div style="width:44px; height:44px; border-radius:11px; background:#3F43EE; display:flex; align-items:center; justify-content:center; color:#fff;"><span class="ms" style="font-size:24px;">travel_explore</span></div><div style="font-size:9px; font-weight:700; letter-spacing:.04em; color:#fff; background:#3F43EE; padding:3px 7px; border-radius:999px;">NEW</div></div>
+                <div style="font-size:15px; font-weight:700; color:#161617;">Auto Crawl</div>
+                <div style="font-size:12.5px; color:#5A5A63; line-height:1.5; margin:6px 0 0;">Enter a URL and let ContextQA explore your app and generate test cases. No extension required.</div>
+                <div style="font-size:12.5px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:14px;">Start crawl →</div>
+              </div>
+              <div onClick="{{ selAi }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:18px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+                <div style="width:44px; height:44px; border-radius:11px; background:rgba(99,102,241,.10); display:flex; align-items:center; justify-content:center; color:#6366F1; margin-bottom:11px;"><span class="ms" style="font-size:24px;">auto_awesome</span></div>
+                <div style="font-size:15px; font-weight:700; color:#161617;">AI Assistance</div>
+                <div style="font-size:12.5px; color:#6B7280; line-height:1.5; margin:6px 0 0;">Describe your feature and let AI generate comprehensive test cases instantly.</div>
+                <div style="font-size:12.5px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:14px;">Get started →</div>
+              </div>
+              <div onClick="{{ selImport }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:18px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+                <div style="width:44px; height:44px; border-radius:11px; background:#ECFDF3; display:flex; align-items:center; justify-content:center; color:#00A63E; margin-bottom:11px;"><span class="ms" style="font-size:24px;">upload_file</span></div>
+                <div style="font-size:15px; font-weight:700; color:#161617;">Import Files</div>
+                <div style="font-size:12.5px; color:#6B7280; line-height:1.5; margin:6px 0 0;">Upload requirements docs or test spreadsheets to extract and generate cases.</div>
+                <div style="font-size:12.5px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:14px;">Get started →</div>
+              </div>
+              <div onClick="{{ selRecord }}" style="border:1.5px solid #E5E7EB; border-radius:12px; padding:18px; cursor:pointer; display:flex; flex-direction:column; background:#fff; transition:.2s;" style-hover="border-color:#6366F1; box-shadow:0 2px 12px rgba(99,102,241,.1);">
+                <div style="width:44px; height:44px; border-radius:11px; background:#FEF1E7; display:flex; align-items:center; justify-content:center; color:#F97316; margin-bottom:11px;"><span class="ms" style="font-size:24px;">videocam</span></div>
+                <div style="font-size:15px; font-weight:700; color:#161617;">Record &amp; Play</div>
+                <div style="font-size:12.5px; color:#6B7280; line-height:1.5; margin:6px 0 0;">Record browser interactions and automatically convert them into reusable test steps.</div>
+                <div style="font-size:12.5px; font-weight:600; color:#3F43EE; margin-top:auto; padding-top:14px;">Get started →</div>
+              </div>
+            </div>
+          </sc-if>
+
+          <div onClick="{{ selManual }}" style="margin-top:16px; display:flex; align-items:center; justify-content:space-between; gap:12px; border:1.5px solid rgba(0,0,0,.08); border-radius:10px; padding:12px 16px; cursor:pointer; transition:.2s;" style-hover="background:#F9FAFB; border-color:#E5E7EB;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:30px; height:30px; border-radius:8px; background:#F3F4F6; display:flex; align-items:center; justify-content:center; color:#6D6D74;"><span class="ms" style="font-size:18px;">edit</span></div>
+              <div>
+                <div style="font-size:13.5px; font-weight:600; color:#161617;">Create manually</div>
+                <div style="font-size:12px; color:#6B7280;">Define steps and expected results by hand.</div>
+              </div>
+            </div>
+            <span class="ms" style="color:#9CA3AF; font-size:18px;">arrow_forward</span>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- CONFIG -->
+      <sc-if value="{{ isConfig }}">
+        <div style="padding:24px;">
+          <div style="font-size:12px; font-weight:600; color:#6B7280; margin-bottom:8px;">Creation methods</div>
+          <div style="display:flex; gap:5px; background:#F8FAFC; border:1px solid #EFEFF1; border-radius:10px; padding:5px; margin-bottom:24px;">
+            <div onClick="{{ backToMethod }}" style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; height:32px; border-radius:7px; cursor:pointer; font-size:12.5px; font-weight:500; color:#6B7280; white-space:nowrap;" style-hover="color:#3F43EE;"><span class="ms" style="font-size:16px;">auto_awesome</span>AI Assisted</div>
+            <div onClick="{{ backToMethod }}" style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; height:32px; border-radius:7px; cursor:pointer; font-size:12.5px; font-weight:500; color:#6B7280; white-space:nowrap;" style-hover="color:#3F43EE;"><span class="ms" style="font-size:16px;">upload_file</span>Upload</div>
+            <div onClick="{{ backToMethod }}" style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; height:32px; border-radius:7px; cursor:pointer; font-size:12.5px; font-weight:500; color:#6B7280; white-space:nowrap;" style-hover="color:#3F43EE;"><span class="ms" style="font-size:16px;">videocam</span>Record</div>
+            <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; height:32px; border-radius:7px; cursor:default; font-size:12.5px; font-weight:600; color:#3F43EE; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.1); white-space:nowrap;"><span class="ms" style="font-size:16px;">travel_explore</span>Auto Crawl</div>
+            <div onClick="{{ backToMethod }}" style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; height:32px; border-radius:7px; cursor:pointer; font-size:12.5px; font-weight:500; color:#6B7280; white-space:nowrap;" style-hover="color:#3F43EE;"><span class="ms" style="font-size:16px;">edit_note</span>Manual</div>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:5px; margin-bottom:7px;"><div style="font-size:13px; font-weight:600; color:#161617; white-space:nowrap;">Target URL</div><div style="color:#EE3F3F; font-size:13px;">*</div></div>
+          <div style="display:flex; align-items:center; gap:9px; height:44px; border-radius:8px; border:1px solid #E2E2E3; padding:0 13px; margin-bottom:22px;">
+            <span class="ms" style="color:#9CA3AF; font-size:18px;">link</span>
+            <input value="{{ url }}" onInput="{{ onUrl }}" placeholder="https://staging.shopflow.app" style="flex:1; border:none; outline:none; font-family:'Inter',sans-serif; font-size:14px; color:#161617; background:transparent;">
+          </div>
+
+          <div style="display:flex; align-items:center; gap:5px; margin-bottom:7px;"><div style="font-size:13px; font-weight:600; color:#161617; white-space:nowrap;">Describe what to test</div><div style="color:#EE3F3F; font-size:13px;">*</div></div>
+          <textarea value="{{ describe }}" onInput="{{ onDescribe }}" placeholder="e.g. Explore the storefront and checkout. Cover sign-in, adding items to cart, applying a coupon, and completing payment. Flag any broken validation." style="width:100%; min-height:96px; resize:vertical; border-radius:8px; border:1px solid #E2E2E3; padding:12px 13px; font-family:'Inter',sans-serif; font-size:13.5px; color:#161617; outline:none; line-height:1.5;"></textarea>
+
+          <div style="height:1px; background:#F1F1F2; margin:24px 0;"></div>
+
+          <div onClick="{{ toggleConfig }}" style="display:flex; align-items:center; gap:9px; cursor:pointer;">
+            <span class="ms" style="font-size:19px; color:#6D6D74;">tune</span>
+            <div style="font-size:13px; font-weight:600; color:#161617; flex:1;">Configuration options</div>
+            <span style="font-size:11.5px; color:#9CA3AF;">Web · Safe mode</span>
+            <span class="ms" style="font-size:20px; color:#9CA3AF;">{{ configChevron }}</span>
+          </div>
+          <sc-if value="{{ configOpen }}">
+          <div style="margin-top:20px;">
+            <div style="font-size:13px; font-weight:600; color:#161617; margin-bottom:9px;">Target platform</div>
+            <div style="display:flex; gap:8px; margin-bottom:24px;">
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:7px; height:42px; border-radius:999px; cursor:pointer; font-size:13px; font-weight:600; background:rgba(99,102,241,.10); color:#3F43EE; box-shadow:inset 0 0 0 1.5px #3F43EE;"><span class="ms" style="font-size:18px;">desktop_windows</span>Web Application</div>
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; height:42px; border-radius:999px; font-size:13px; font-weight:500; background:#F8FAFC; color:#9CA3AF; box-shadow:inset 0 0 0 1px #E2E2E3; cursor:not-allowed;"><span class="ms" style="font-size:18px;">smartphone</span>Mobile<span style="font-size:10px; font-weight:700; background:#E5E7EB; color:#6D6D74; padding:1px 6px; border-radius:999px;">SOON</span></div>
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; height:42px; border-radius:999px; font-size:13px; font-weight:500; background:#F8FAFC; color:#9CA3AF; box-shadow:inset 0 0 0 1px #E2E2E3; cursor:not-allowed;"><span class="ms" style="font-size:18px;">api</span>API<span style="font-size:10px; font-weight:700; background:#E5E7EB; color:#6D6D74; padding:1px 6px; border-radius:999px;">SOON</span></div>
+            </div>
+            <div style="font-size:13px; font-weight:600; color:#161617; margin-bottom:11px;">How should the agent sign in?</div>
+            <div style="display:flex; flex-direction:column; gap:9px;">
+              <div onClick="{{ authEnv }}" style="border-radius:10px; padding:13px 15px; cursor:pointer; background:{{ envBg }}; box-shadow:{{ envRing }};">
+                <div style="display:flex; align-items:center; gap:11px;">
+                  <div style="width:18px; height:18px; border-radius:999px; flex-shrink:0; box-shadow:inset 0 0 0 {{ envDot }};"></div>
+                  <span class="ms" style="font-size:18px; color:#3F43EE;">dns</span>
+                  <div style="font-size:13.5px; font-weight:600; color:#161617;">Use a saved Environment</div>
+                  <div style="font-size:10.5px; font-weight:700; color:#0DBD7D; background:#E7F8F1; padding:2px 8px; border-radius:999px;">RECOMMENDED</div>
+                </div>
+                <sc-if value="{{ envOpen }}">
+                  <div style="margin:11px 0 2px 29px;">
+                    <div style="font-size:12px; color:#6D6D74; margin-bottom:7px; line-height:1.45;">Credentials are stored encrypted in your Environment — never entered here.</div>
+                    <div style="position:relative;">
+                      <select value="{{ env }}" onChange="{{ onEnv }}" style="width:100%; height:40px; border-radius:8px; border:1px solid #E2E2E3; padding:0 13px; font-family:'Inter',sans-serif; font-size:13.5px; color:#161617; background:#fff; outline:none; appearance:none;">
+                        <option>Staging — staging.shopflow.app</option>
+                        <option>Production — shopflow.app</option>
+                        <option>QA Sandbox — qa.shopflow.app</option>
+                      </select>
+                      <span class="ms" style="position:absolute; right:11px; top:50%; transform:translateY(-50%); color:#9CA3AF; font-size:18px; pointer-events:none;">expand_more</span>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+              <div onClick="{{ authCreds }}" style="border-radius:10px; padding:13px 15px; cursor:pointer; background:{{ credsBg }}; box-shadow:{{ credsRing }};">
+                <div style="display:flex; align-items:center; gap:11px;">
+                  <div style="width:18px; height:18px; border-radius:999px; flex-shrink:0; box-shadow:inset 0 0 0 {{ credsDot }};"></div>
+                  <span class="ms" style="font-size:18px; color:#6D6D74;">lock</span>
+                  <div style="font-size:13.5px; font-weight:600; color:#161617;">Enter credentials</div>
+                </div>
+                <sc-if value="{{ credsOpen }}">
+                  <div style="margin:11px 0 2px 29px; display:flex; gap:9px; align-items:flex-start; background:#FFFBEB; border:1px solid #FCE9B6; border-radius:8px; padding:10px 12px;">
+                    <span class="ms" style="color:#B98900; font-size:17px; flex-shrink:0;">warning</span>
+                    <div style="font-size:11.5px; color:#946A00; line-height:1.45;">The agent can't pass <span style="font-weight:600;">MFA or CAPTCHA</span>. Use a test account without 2-factor, or pick a saved Environment.</div>
+                  </div>
+                </sc-if>
+              </div>
+              <div onClick="{{ authNone }}" style="border-radius:10px; padding:13px 15px; cursor:pointer; background:{{ noneBg }}; box-shadow:{{ noneRing }};">
+                <div style="display:flex; align-items:center; gap:11px;">
+                  <div style="width:18px; height:18px; border-radius:999px; flex-shrink:0; box-shadow:inset 0 0 0 {{ noneDot }};"></div>
+                  <span class="ms" style="font-size:18px; color:#6D6D74;">public</span>
+                  <div style="font-size:13.5px; font-weight:600; color:#161617;">No login needed</div>
+                  <div style="font-size:12px; color:#9CA3AF;">— public pages only</div>
+                </div>
+              </div>
+            </div>
+            <div style="height:1px; background:#F1F1F2; margin:24px 0;"></div>
+            <div style="font-size:13px; font-weight:600; color:#161617; margin-bottom:11px;">Crawl mode</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+              <div onClick="{{ modeSafe }}" style="border-radius:10px; padding:14px; cursor:pointer; background:{{ safeBg }}; box-shadow:{{ safeRing }};">
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;"><span class="ms" style="font-size:19px; color:#0DBD7D;">visibility</span><div style="font-size:13.5px; font-weight:600; color:#161617;">Safe</div><div style="font-size:10.5px; font-weight:700; color:#0DBD7D; background:#E7F8F1; padding:2px 7px; border-radius:999px;">DEFAULT</div></div>
+                <div style="font-size:12px; color:#6D6D74; line-height:1.45;">Read-only. Navigates and inspects, never submits or changes data.</div>
+              </div>
+              <div onClick="{{ modeFull }}" style="border-radius:10px; padding:14px; cursor:pointer; background:{{ fullBg }}; box-shadow:{{ fullRing }};">
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;"><span class="ms" style="font-size:19px; color:#7C3AED;">ads_click</span><div style="font-size:13.5px; font-weight:600; color:#161617;">Full interaction</div></div>
+                <div style="font-size:12px; color:#6D6D74; line-height:1.45;">Clicks, fills and submits forms to reach deeper flows.</div>
+              </div>
+            </div>
+            <sc-if value="{{ showFullWarn }}">
+              <div style="margin-top:10px; display:flex; gap:9px; align-items:flex-start; background:#FDECEC; border:1px solid #F7C9C9; border-radius:8px; padding:10px 12px;">
+                <span class="ms" style="color:#EE3F3F; font-size:17px; flex-shrink:0;">report</span>
+                <div style="font-size:11.5px; color:#A52525; line-height:1.45;">The agent may <span style="font-weight:600;">submit forms, send emails or delete records</span>. Only run Full interaction against staging or a sandbox.</div>
+              </div>
+            </sc-if>
+          </div>
+          </sc-if>
+        </div>
+      </sc-if>
+    </div>
+
+    <!-- SETUP FOOTER -->
+    <div style="flex-shrink:0; border-top:1px solid #F1F1F2; padding:14px 24px; display:flex; align-items:center; gap:12px; background:#fff;">
+      <sc-if value="{{ isMethod }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ noop }}" style="height:44px; padding:0 20px; border-radius:8px; display:flex; align-items:center; box-shadow:inset 0 0 0 1px #E2E2E3; font-size:13.5px; font-weight:600; color:#364153; cursor:pointer;" style-hover="background:#F8FAFC;">Cancel</div>
+        <div style="flex:1;"></div>
+      </sc-if>
+      <sc-if value="{{ isConfig }}">
+        <div onClick="{{ backToMethod }}" style="height:44px; padding:0 20px; border-radius:8px; display:flex; align-items:center; box-shadow:inset 0 0 0 1px #E2E2E3; font-size:13.5px; font-weight:600; color:#364153; cursor:pointer;" style-hover="background:#F8FAFC;">Back</div>
+        <div style="flex:1;"></div>
+        <div onClick="{{ startCrawl }}" style="height:44px; padding:0 22px; border-radius:8px; display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600; cursor:pointer; background:{{ startBg }}; color:#fff; box-shadow:{{ startShadow }};"><span class="ms" style="font-size:18px;">travel_explore</span>Start crawl</div>
+      </sc-if>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ EXECUTION SHELL (full screen) ============ -->
+  <sc-if value="{{ isExec }}">
+  <div style="position:absolute; inset:0; background:#F6F7F9; display:flex; flex-direction:column;">
+
+    <sc-if value="{{ isCrawl }}">
+    <!-- Shared header (crawl only) -->
+    <div style="flex-shrink:0; height:64px; background:#fff; border-bottom:1px solid #E2E2E3; display:flex; align-items:center; gap:14px; padding:0 22px;">
+      <div onClick="{{ execBack }}" style="width:34px; height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#6D6D74; cursor:pointer; flex-shrink:0;" style-hover="background:#F3F4F6;"><span class="ms" style="font-size:20px;">arrow_back</span></div>
+      <div style="width:38px; height:38px; border-radius:10px; background:#3F43EE; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span class="ms" style="color:#fff; font-size:22px;">travel_explore</span></div>
+      <div style="min-width:0;">
+        <div style="font-size:15px; font-weight:700; color:#161617;">{{ execTitle }}</div>
+        <div style="font-size:12px; color:#6D6D74; display:flex; align-items:center; gap:5px;"><span class="ms" style="font-size:13px; color:#0DBD7D;">lock</span>{{ crawlUrl }}</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:7px; margin-left:6px; background:{{ pillBg }}; border:1px solid {{ pillBorder }}; padding:5px 11px; border-radius:999px;">
+        <div style="width:7px; height:7px; border-radius:999px; background:{{ pillDot }}; animation:{{ pillAnim }};"></div>
+        <span style="font-size:12px; font-weight:600; color:{{ pillFg }};">{{ stage }}</span>
+      </div>
+      <div style="flex:1;"></div>
+      <!-- running actions -->
+      <sc-if value="{{ crawlRunning }}">
+        <div onClick="{{ runBackground }}" style="height:38px; padding:0 15px; border-radius:8px; display:flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:#364153; cursor:pointer;" style-hover="background:#F3F4F6;"><span class="ms" style="font-size:17px;">minimize</span>Run in background</div>
+        <div onClick="{{ stopKeep }}" style="height:38px; padding:0 16px; border-radius:8px; display:flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:#EE3F3F; cursor:pointer; box-shadow:inset 0 0 0 1px #F3B0B0;" style-hover="background:#FDECEC;"><span class="ms" style="font-size:17px;">stop_circle</span>Stop &amp; keep results</div>
+      </sc-if>
+      <!-- ready action -->
+      <sc-if value="{{ crawlDone }}">
+        <div onClick="{{ goReview }}" style="height:40px; padding:0 20px; border-radius:8px; display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600; color:#fff; background:#3F43EE; cursor:pointer; box-shadow:0 1px 2px rgba(0,0,0,.12);">Review {{ totalCases }} test cases<span class="ms" style="font-size:18px;">arrow_forward</span></div>
+      </sc-if>
+    </div>
+    </sc-if>
+
+    <!-- ===== LIVE CRAWL ===== -->
+    <sc-if value="{{ isCrawl }}">
+    <div style="flex:1; display:flex; flex-direction:column; min-height:0;">
+
+      <!-- Stage stepper -->
+      
+
+      <!-- Metrics -->
+      <div style="flex-shrink:0; display:flex; gap:14px; padding:18px 26px 6px;">
+        <div style="flex:1; background:#fff; border:1px solid #E2E2E3; border-radius:12px; padding:16px 20px;">
+          <div style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:34px; color:#3F43EE; line-height:1; font-feature-settings:'tnum';">{{ pages }}</div>
+          <div style="font-size:12.5px; color:#6D6D74; margin-top:5px;">Pages</div>
+        </div>
+        <div style="flex:1; background:#fff; border:1px solid #E2E2E3; border-radius:12px; padding:16px 20px;">
+          <div style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:34px; color:#3F43EE; line-height:1; font-feature-settings:'tnum';">{{ flows }}</div>
+          <div style="font-size:12.5px; color:#6D6D74; margin-top:5px;">Flows</div>
+        </div>
+        <div style="flex:1; background:#fff; border:1px solid #E2E2E3; border-radius:12px; padding:16px 20px;">
+          <div style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:34px; color:#3F43EE; line-height:1; font-feature-settings:'tnum';">{{ cases }}</div>
+          <div style="font-size:12.5px; color:#6D6D74; margin-top:5px;">Test cases</div>
+        </div>
+      </div>
+
+      <!-- Body: left tabs panel + right live preview -->
+      <div style="flex:1; min-height:0; display:flex; gap:14px; padding:12px 26px 22px;">
+
+        <!-- LEFT PANEL -->
+        <div style="width:392px; flex-shrink:0; background:#fff; border:1px solid #E2E2E3; border-radius:12px; display:flex; flex-direction:column; min-height:0;">
+          <div style="flex-shrink:0; display:flex; gap:22px; padding:0 16px; border-bottom:1px solid #F1F1F2;">
+            <div onClick="{{ tabActivity }}" style="padding:11px 0; cursor:pointer; font-size:12.5px; font-weight:{{ tabActWt }}; color:{{ tabActFg }}; border-bottom:2px solid {{ tabActBd }};">Activity</div>
+            <div onClick="{{ tabMap }}" style="padding:11px 0; cursor:pointer; font-size:12.5px; font-weight:{{ tabMapWt }}; color:{{ tabMapFg }}; border-bottom:2px solid {{ tabMapBd }};">Map</div>
+            <div onClick="{{ tabLogs }}" style="padding:11px 0; cursor:pointer; font-size:12.5px; font-weight:{{ tabLogsWt }}; color:{{ tabLogsFg }}; border-bottom:2px solid {{ tabLogsBd }};">Logs</div>
+          </div>
+          <div class="acx-scroll" style="flex:1; overflow-y:auto; padding:14px 16px;">
+            <!-- Activity -->
+            <sc-if value="{{ showActivity }}">
+              <div style="font-size:11px; font-weight:700; letter-spacing:.05em; color:#9CA3AF; text-transform:uppercase; margin-bottom:12px;">Crawl activity</div>
+              <div style="display:flex; flex-direction:column; gap:13px;">
+                <sc-for list="{{ events }}" as="ev" hint-placeholder-count="4">
+                  <div style="display:flex; gap:10px; align-items:flex-start; animation:acx-pop .3s ease-out;">
+                    <div style="width:24px; height:24px; border-radius:999px; flex-shrink:0; background:{{ ev.bg }}; display:flex; align-items:center; justify-content:center;"><span class="ms" style="font-size:15px; color:{{ ev.color }};">{{ ev.icon }}</span></div>
+                    <div style="flex:1; min-width:0;">
+                      <div style="font-size:12.5px; color:#364153; line-height:1.4;">{{ ev.text }}</div>
+                      <div style="font-size:10.5px; color:#9CA3AF; margin-top:2px;">{{ ev.time }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <!-- Map -->
+            <sc-if value="{{ showMap }}">
+              <div style="display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:#161617; margin-bottom:12px;"><span class="ms" style="font-size:17px; color:#3F43EE;">language</span>{{ crawlUrl }}</div>
+              <div style="display:flex; flex-direction:column; gap:8px; padding-left:6px; border-left:2px solid #EEF0FF; margin-left:8px;">
+                <sc-for list="{{ mapFlows }}" as="f" hint-placeholder-count="4">
+                  <div>
+                    <div onClick="{{ f.onToggle }}" style="display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid #E2E2E3; border-radius:9px; cursor:pointer; background:#fff;" style-hover="background:#F8FAFC;">
+                      <span class="ms" style="font-size:17px; color:#7C3AED;">account_tree</span>
+                      <div style="flex:1; font-size:12.5px; font-weight:600; color:#161617;">{{ f.name }}</div>
+                      <div style="font-size:10.5px; font-weight:700; color:#3F43EE; background:rgba(99,102,241,.10); padding:2px 8px; border-radius:999px;">{{ f.count }} cases</div>
+                      <span class="ms" style="font-size:18px; color:#9CA3AF;">{{ f.chevron }}</span>
+                    </div>
+                    <sc-if value="{{ f.open }}">
+                      <div style="display:flex; flex-direction:column; gap:5px; padding:7px 0 2px 26px;">
+                        <sc-for list="{{ f.cases }}" as="cc" hint-placeholder-count="3">
+                          <div style="display:flex; align-items:center; gap:7px; font-size:12px; color:#6D6D74;"><span class="ms" style="font-size:13px; color:#CBD5E1;">subdirectory_arrow_right</span>{{ cc.title }}</div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <!-- Logs -->
+            <sc-if value="{{ showLogs }}">
+              <div style="display:flex; flex-direction:column; gap:11px;">
+                <sc-for list="{{ logs }}" as="lg" hint-placeholder-count="5">
+                  <div style="display:flex; gap:9px; align-items:flex-start;">
+                    <span class="ms" style="font-size:16px; color:{{ lg.color }}; flex-shrink:0;">{{ lg.icon }}</span>
+                    <div style="font-size:12px; color:#475569; line-height:1.45; font-feature-settings:'tnum';">{{ lg.text }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+
+        <!-- RIGHT: live browser preview (hero) -->
+        <div style="flex:1; min-width:0; background:#fff; border:1px solid #E2E2E3; border-radius:12px; overflow:hidden; display:flex; flex-direction:column;">
+          <div style="flex-shrink:0; height:40px; background:#F3F4F6; border-bottom:1px solid #E2E2E3; display:flex; align-items:center; gap:8px; padding:0 13px;">
+            <div style="display:flex; gap:5px;"><div style="width:10px;height:10px;border-radius:999px;background:#E2E2E3;"></div><div style="width:10px;height:10px;border-radius:999px;background:#E2E2E3;"></div><div style="width:10px;height:10px;border-radius:999px;background:#E2E2E3;"></div></div>
+            <div style="flex:1; height:22px; background:#fff; border:1px solid #E5E7EB; border-radius:999px; display:flex; align-items:center; gap:5px; padding:0 10px; font-size:11.5px; color:#6D6D74;"><span class="ms" style="font-size:13px; color:#0DBD7D;">lock</span>{{ crawlUrl }}</div>
+            <div style="display:flex; align-items:center; gap:6px; background:#FDECEC; padding:3px 9px; border-radius:999px;"><div style="width:7px; height:7px; border-radius:999px; background:#EE3F3F; animation:acx-blink 1.1s infinite;"></div><span style="font-size:10px; font-weight:700; color:#EE3F3F; letter-spacing:.05em;">LIVE</span></div>
+          </div>
+          <div style="flex:1; position:relative; overflow:hidden; background:#fff;">
+            <!-- crawl-specific status chip -->
+            <div style="position:absolute; top:12px; left:12px; z-index:8; display:flex; align-items:center; gap:7px; background:rgba(63,67,238,.95); color:#fff; padding:6px 12px; border-radius:999px; box-shadow:0 4px 12px rgba(63,67,238,.4);"><span class="ms" style="font-size:15px; animation:acx-spin 1.6s linear infinite;">progress_activity</span><span style="font-size:12px; font-weight:600;">{{ scanLabel }}</span></div>
+            <!-- faux app -->
+            <div style="height:54px; border-bottom:1px solid #F1F1F2; display:flex; align-items:center; padding:0 22px; gap:20px;">
+              <div style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:18px; color:#3F43EE;">ShopFlow</div>
+              <div style="font-size:13px; color:#6D6D74;">Home</div>
+              <div style="font-size:13px; color:#161617; font-weight:600;">Products</div>
+              <div style="font-size:13px; color:#6D6D74;">Deals</div>
+              <div style="flex:1;"></div>
+              <div style="width:180px; height:32px; background:#F3F4F6; border-radius:999px;"></div>
+              <div style="width:32px; height:32px; border-radius:9px; background:#F1ECFE; display:flex; align-items:center; justify-content:center; color:#7C3AED;"><span class="ms" style="font-size:19px;">shopping_cart</span></div>
+              <div style="width:32px; height:32px; border-radius:999px; background:#E5E7EB;"></div>
+            </div>
+            <div style="padding:22px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;">
+              <div style="border:1px solid #F1F1F2; border-radius:10px; padding:14px;"><div style="height:78px; background:#F3F4F6; border-radius:8px; margin-bottom:11px;"></div><div style="height:9px; width:70%; background:#E5E7EB; border-radius:4px; margin-bottom:8px;"></div><div style="font-size:14px; font-weight:700; color:#161617; margin-bottom:11px;">$42</div><div style="height:32px; background:#3F43EE; border-radius:8px;"></div></div>
+              <div style="border:1px solid #F1F1F2; border-radius:10px; padding:14px;"><div style="height:78px; background:#F3F4F6; border-radius:8px; margin-bottom:11px;"></div><div style="height:9px; width:60%; background:#E5E7EB; border-radius:4px; margin-bottom:8px;"></div><div style="font-size:14px; font-weight:700; color:#161617; margin-bottom:11px;">$28</div><div style="height:32px; background:#3F43EE; border-radius:8px;"></div></div>
+              <div style="border:1px solid #F1F1F2; border-radius:10px; padding:14px;"><div style="height:78px; background:#F3F4F6; border-radius:8px; margin-bottom:11px;"></div><div style="height:9px; width:80%; background:#E5E7EB; border-radius:4px; margin-bottom:8px;"></div><div style="font-size:14px; font-weight:700; color:#161617; margin-bottom:11px;">$66</div><div style="height:32px; background:#3F43EE; border-radius:8px;"></div></div>
+            </div>
+            <div style="margin:4px 22px 0; border:1px solid #F1F1F2; border-radius:10px; padding:14px; display:flex; gap:12px; align-items:center;">
+              <div style="flex:1; height:36px; background:#F8FAFC; border:1px solid #F1F1F2; border-radius:8px;"></div>
+              <div style="flex:1; height:36px; background:#F8FAFC; border:1px solid #F1F1F2; border-radius:8px;"></div>
+              <div style="width:110px; height:36px; background:#0DBD7D; border-radius:8px;"></div>
+            </div>
+            <!-- highlight box -->
+            <div style="position:absolute; left:{{ hlLeft }}; top:{{ hlTop }}; width:{{ hlW }}; height:{{ hlH }}; border:2px solid #3F43EE; border-radius:7px; background:rgba(63,67,238,.08); opacity:{{ hlOpacity }}; transition:all .7s cubic-bezier(.4,0,.2,1); animation:acx-hlpulse 1.4s infinite; pointer-events:none;">
+              <div style="position:absolute; top:-22px; left:-2px; background:#3F43EE; color:#fff; font-size:10.5px; font-weight:600; padding:3px 8px; border-radius:6px; white-space:nowrap;">{{ hlLabel }}</div>
+            </div>
+            <!-- cursor -->
+            <div style="position:absolute; left:{{ cursorLeft }}; top:{{ cursorTop }}; transition:all 1.1s cubic-bezier(.45,0,.25,1); pointer-events:none; z-index:9;">
+              <span class="ms" style="font-size:26px; color:#161617; filter:drop-shadow(0 1px 3px rgba(0,0,0,.4));">near_me</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Completion card (Auto Crawl analog of "Test Passed") -->
+      <sc-if value="{{ crawlDone }}">
+        <div style="position:absolute; inset:0; background:rgba(15,23,42,.45); display:flex; align-items:center; justify-content:center; z-index:30;">
+          <div style="width:460px; max-width:92%; background:#fff; border-radius:14px; box-shadow:0 24px 60px -12px rgba(0,0,0,.35); padding:30px;">
+            <div style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+              <div style="width:60px; height:60px; border-radius:14px; background:#E7F8F1; display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><span class="ms" style="font-size:34px; color:#0DBD7D;">check_circle</span></div>
+              <div style="font-size:22px; font-weight:600; color:#0B0B0C; letter-spacing:-.3px;">Crawl complete</div>
+              <div style="font-size:13px; color:#6D6D74; margin-top:6px; line-height:1.5; max-width:340px;">ContextQA explored your app and drafted <span style="font-weight:600; color:#161617;">{{ totalCases }} test cases</span>. Review and pick what to keep — nothing runs until you add it.</div>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; border:1px solid #E5E7EB; border-radius:10px; padding:16px; margin:20px 0;">
+              <div style="display:flex; flex-direction:column;"><span style="font-size:11px; color:#4A5565; margin-bottom:3px;">Pages</span><span style="font-size:18px; font-weight:500; color:#101828; font-feature-settings:'tnum';">{{ pages }}</span></div>
+              <div style="display:flex; flex-direction:column;"><span style="font-size:11px; color:#4A5565; margin-bottom:3px;">Flows</span><span style="font-size:18px; font-weight:500; color:#101828; font-feature-settings:'tnum';">{{ flows }}</span></div>
+              <div style="display:flex; flex-direction:column;"><span style="font-size:11px; color:#4A5565; margin-bottom:3px;">Test cases</span><span style="font-size:18px; font-weight:500; color:#101828; font-feature-settings:'tnum';">{{ cases }}</span></div>
+              <div style="display:flex; flex-direction:column;"><span style="font-size:11px; color:#4A5565; margin-bottom:3px;">Duration</span><span style="font-size:18px; font-weight:500; color:#101828; font-feature-settings:'tnum';">{{ durationFmt }}</span></div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div onClick="{{ goReview }}" style="height:46px; border-radius:9px; background:#3F43EE; color:#fff; display:flex; align-items:center; justify-content:center; gap:8px; font-size:14px; font-weight:600; cursor:pointer; box-shadow:0 1px 2px rgba(0,0,0,.12);">Review {{ totalCases }} test cases<span class="ms" style="font-size:19px;">arrow_forward</span></div>
+              <div onClick="{{ rerunCrawl }}" style="height:44px; border-radius:9px; color:#364153; display:flex; align-items:center; justify-content:center; gap:8px; font-size:13.5px; font-weight:600; cursor:pointer; box-shadow:inset 0 0 0 1px #E2E2E3;" style-hover="background:#F8FAFC;"><span class="ms" style="font-size:18px;">refresh</span>Re-run crawl</div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+    </sc-if>
+
+    <!-- ===== REVIEW (Generated Test Cases — requirements-style) ===== -->
+    <sc-if value="{{ isReview }}">
+    <div data-screen-label="Auto Crawl review" style="flex:1; min-height:0; display:flex; flex-direction:column; background:#fff;">
+
+      <!-- Header -->
+      <div style="flex-shrink:0; padding:14px 26px 0; background:#fff; border-bottom:1px solid #E8E8EB;">
+        <div style="display:flex; align-items:center; gap:13px;">
+          <div onClick="{{ execBack }}" style="width:34px; height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#6D6D74; cursor:pointer; flex-shrink:0;" style-hover="background:#F3F4F6;"><span class="ms" style="font-size:20px;">arrow_back</span></div>
+          <div style="font-size:19px; font-weight:700; color:#161617; letter-spacing:-.3px;">Auto Crawl</div>
+          <div style="display:flex; align-items:center; gap:6px; background:#E7F8F1; border:1px solid #BCEBD8; padding:4px 11px; border-radius:999px;"><span style="width:7px; height:7px; border-radius:999px; background:#0DBD7D;"></span><span style="font-size:12px; font-weight:600; color:#08543A;">Ready for review</span></div>
+          <div style="flex:1;"></div>
+          <div onClick="{{ noop }}" style="display:flex; align-items:center; gap:7px; height:38px; padding:0 15px; border-radius:8px; box-shadow:inset 0 0 0 1px #E2E2E3; font-size:13px; font-weight:600; color:#364153; cursor:pointer;" style-hover="background:#F8FAFC;"><span class="ms" style="font-size:17px;">file_upload</span>Export</div>
+        </div>
+
+        <!-- Context sub-row -->
+        <div style="display:flex; align-items:center; gap:11px; margin:11px 0 0 47px; font-size:12.5px; color:#6D6D74; flex-wrap:wrap;">
+          <span style="display:flex; align-items:center; gap:6px;"><span class="ms" style="font-size:16px; color:#3F43EE;">travel_explore</span><span style="font-weight:600; color:#364153;">Auto Crawl</span></span>
+          <span style="color:#D7D7DB;">|</span><span>Web</span>
+          <span style="color:#D7D7DB;">|</span><span style="display:flex; align-items:center; gap:4px;"><span class="ms" style="font-size:14px; color:#0DBD7D;">lock</span>{{ reviewUrl }}</span>
+          <span style="color:#D7D7DB;">|</span><span style="display:flex; align-items:center; gap:6px;"><span style="width:18px; height:18px; border-radius:999px; background:#E0E3FF; color:#4338CA; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center;">A</span>{{ reviewUser }}</span>
+          <span style="color:#D7D7DB;">|</span><span>{{ reviewTime }}</span>
+        </div>
+
+        <!-- Count + type pills -->
+        <div style="display:flex; align-items:center; gap:14px; margin:16px 0 0; flex-wrap:wrap;">
+          <div style="display: flex; align-items: baseline; gap: 8px; flex-direction: column"><span style="font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:26px; color:#161617; font-feature-settings:'tnum';">{{ genTotal }}</span><span style="font-size: 13px; font-weight: 400; color: #6D6D74">Generated Test Cases</span></div>
+          <div style="display:flex; align-items:center; gap:7px; flex-wrap:wrap;">
+            <sc-for list="{{ typePills }}" as="p" hint-placeholder-count="5">
+              <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; padding: 3px 10px; border-radius: 4px; background: {{ p.bg }}; border: 1px solid {{ p.bd }}; color: {{ p.fg }}"><span style="font-weight: normal;">{{ p.label }}&nbsp; {{ p.count }}</span></span>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- Tabs (underline) -->
+        <div style="display:flex; gap:24px; margin-top:16px;">
+          <div onClick="{{ rvTabCases }}" style="font-size:13px; padding-bottom:11px; cursor:pointer; font-weight:{{ rvCasesWt }}; color:{{ rvCasesFg }}; border-bottom:2px solid {{ rvCasesBd }};">Test Cases</div>
+          <div onClick="{{ rvTabMap }}" style="font-size:13px; padding-bottom:11px; cursor:pointer; font-weight:{{ rvMapWt }}; color:{{ rvMapFg }}; border-bottom:2px solid {{ rvMapBd }};">Crawl Map</div>
+          <div onClick="{{ rvTabActivity }}" style="font-size:13px; padding-bottom:11px; cursor:pointer; font-weight:{{ rvActWt }}; color:{{ rvActFg }}; border-bottom:2px solid {{ rvActBd }};">Activity</div>
+          <div onClick="{{ rvTabGaps }}" style="font-size:13px; padding-bottom:11px; cursor:pointer; font-weight:{{ rvGapsWt }}; color:{{ rvGapsFg }}; border-bottom:2px solid {{ rvGapsBd }};">Gaps</div>
+        </div>
+      </div>
+
+      <!-- Scrollable body -->
+      <div class="acx-scroll" style="flex:1; overflow-y:auto; padding:16px 26px 8px;">
+
+        <sc-if value="{{ rvShowCases }}">
+        <!-- Search + Filter -->
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:13px;">
+          <div style="flex:1; max-width:340px; display:flex; align-items:center; gap:8px; height:38px; border:1px solid #E2E2E3; border-radius:8px; padding:0 12px; background:#fff;"><span class="ms" style="font-size:18px; color:#9CA3AF;">search</span><span style="font-size:13px; color:#9CA3AF;">Search test cases</span></div>
+          <div style="display:flex; align-items:center; gap:7px; height:38px; padding:0 14px; border:1px solid #E2E2E3; border-radius:8px; background:#fff; font-size:13px; font-weight:600; color:#364153; cursor:pointer;" style-hover="background:#F8FAFC;"><span class="ms" style="font-size:17px;">filter_list</span>Filter</div>
+          <div style="flex:1;"></div>
+        </div>
+
+        <!-- Drafts note -->
+        <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px; background:#FFFBEB; border:1px solid #FCE9B6; border-radius:9px; padding:10px 13px;">
+          <span class="ms" style="font-size:17px; color:#B98900;">info</span>
+          <div style="font-size:12px; color:#946A00; line-height:1.45;">These are <span style="font-weight:700;">drafts</span> — accepting a case adds it to your suite; nothing runs until you choose to. Rejecting discards it.</div>
+        </div>
+
+        <!-- Table -->
+        <div style="border:1px solid #E2E2E3; border-radius:10px; overflow:hidden; background:#fff;">
+          <div style="display:grid; grid-template-columns:42px minmax(260px,1fr) 116px 104px 188px 196px 142px 96px; align-items:center; background:#F8FAFC; border-bottom:1px solid #E2E2E3; padding:0 16px; height:40px; font-size:10.5px; font-weight:700; letter-spacing:.05em; color:#6D6D74;">
+            <div onClick="{{ toggleAllSel }}" style="display:flex; cursor:pointer;"><div style="width:17px; height:17px; border-radius:5px; display:flex; align-items:center; justify-content:center; background:{{ allBoxBg }}; box-shadow:{{ allBoxRing }};"><span class="ms" style="font-size:13px; color:#fff; display:{{ allBoxShow }};">check</span></div></div>
+            <div>TEST CASE</div><div>TYPE</div><div>PRIORITY</div><div>PREREQUISITE</div><div>VARIABLES</div><div>DECISION</div><div style="text-align:right;">ACTIONS</div>
+          </div>
+          <sc-for list="{{ reviewCases }}" as="c" hint-placeholder-count="8">
+            <div style="display:grid; grid-template-columns:42px minmax(260px,1fr) 116px 104px 188px 196px 142px 96px; align-items:center; padding:12px 16px; border-bottom:1px solid #F4F4F5; background:{{ c.rowBg }};">
+              <div onClick="{{ c.onToggle }}" style="cursor:pointer;"><div style="width:17px; height:17px; border-radius:5px; display:flex; align-items:center; justify-content:center; background:{{ c.boxBg }}; box-shadow:{{ c.boxRing }};"><span class="ms" style="font-size:13px; color:#fff; display:{{ c.checkShow }};">check</span></div></div>
+              <div style="min-width:0; padding-right:14px;">
+                <div style="display:flex; align-items:center; gap:8px;"><span style="font-size:10.5px; font-weight:700; color:#3F43EE; font-feature-settings:'tnum';">{{ c.idLabel }}</span><span style="font-size:13.5px; font-weight:600; color:#161617; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ c.title }}</span></div>
+                <div style="display:flex; align-items:center; gap:6px; margin-top:4px; min-width:0;"><span style="display:inline-flex; align-items:center; gap:3px; font-size:10px; font-weight:600; color:#6D28D9; background:#F3F0FF; padding:1px 7px; border-radius:999px; flex-shrink:0;"><span class="ms" style="font-size:11px;">account_tree</span>{{ c.flowName }}</span><span style="font-size:11.5px; color:#9CA3AF; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ c.desc }}</span></div>
+              </div>
+              <div><span style="display: inline-block; font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 4px; background: {{ c.tagBg }}; border: 1px solid {{ c.tagBd }}; color: {{ c.tagFg }}">{{ c.tagLabel }}</span></div>
+              <div><span style="display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 4px; background: {{ c.priBg }}; border: 1px solid {{ c.priBd }}; color: {{ c.priFg }}">{{ c.pri }}</span></div>
+              <div style="font-size:11.5px; color:#6D6D74; line-height:1.4; padding-right:12px;">{{ c.prereq }}</div>
+              <div style="display:flex; flex-wrap:wrap; gap:4px; padding-right:10px;">
+                <sc-for list="{{ c.vars }}" as="v" hint-placeholder-count="2">
+                  <span style="font-family:'SF Mono',ui-monospace,Menlo,monospace; font-size:10.5px; color:#4338CA; background:#EEF2FF; border:1px solid #E0E3FF; padding:2px 7px; border-radius:6px; white-space:nowrap;">{{ v.name }}</span>
+                </sc-for>
+              </div>
+              <div><span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; padding: 4px 11px; border-radius: 4px; background: {{ c.decBg }}; border: 1px solid {{ c.decBd }}; color: {{ c.decFg }}"><span class="ms" style="font-size:13px;">{{ c.decIcon }}</span>{{ c.decLabel }}</span></div>
+              <div style="display:flex; align-items:center; gap:3px; justify-content:flex-end;">
+                <sc-if value="{{ c.showPendingActions }}">
+                  <div onClick="{{ c.onEdit }}" style="width:28px; height:28px; border-radius:7px; display:flex; align-items:center; justify-content:center; color:#6D6D74; cursor:pointer;" style-hover="background:#F3F4F6;"><span class="ms" style="font-size:16px;">edit</span></div>
+                  <div onClick="{{ c.onAccept }}" style="width:28px; height:28px; border-radius:7px; display:flex; align-items:center; justify-content:center; color:#059669; cursor:pointer;" style-hover="background:#D1FAE5;"><span class="ms" style="font-size:18px;">check_circle</span></div>
+                  <div onClick="{{ c.onReject }}" style="width:28px; height:28px; border-radius:7px; display:flex; align-items:center; justify-content:center; color:#DC2626; cursor:pointer;" style-hover="background:#FEE2E2;"><span class="ms" style="font-size:18px;">cancel</span></div>
+                </sc-if>
+                <sc-if value="{{ c.showAcceptedActions }}">
+                  <div onClick="{{ c.onOpen }}" style="width:28px; height:28px; border-radius:7px; display:flex; align-items:center; justify-content:center; color:#3F43EE; cursor:pointer;" style-hover="background:#EEF2FF;"><span class="ms" style="font-size:17px;">open_in_new</span></div>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="height:8px;"></div>
+        </sc-if>
+
+        <!-- ===== Crawl Map panel ===== -->
+        <sc-if value="{{ rvShowMap }}">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+            <div style="display:flex; align-items:center; gap:8px; height:38px; padding:0 14px; border:1px solid #E2E2E3; border-radius:8px; background:#fff;"><span class="ms" style="font-size:17px; color:#3F43EE;">description</span><span style="font-size:13px; color:#6D6D74;"><span style="font-weight:700; color:#161617; font-family:'Nunito Sans',sans-serif;">12</span> pages</span></div>
+            <div style="display:flex; align-items:center; gap:8px; height:38px; padding:0 14px; border:1px solid #E2E2E3; border-radius:8px; background:#fff;"><span class="ms" style="font-size:17px; color:#6D28D9;">account_tree</span><span style="font-size:13px; color:#6D6D74;"><span style="font-weight:700; color:#161617; font-family:'Nunito Sans',sans-serif;">4</span> flows</span></div>
+            <div style="display:flex; align-items:center; gap:8px; height:38px; padding:0 14px; border:1px solid #E2E2E3; border-radius:8px; background:#fff;"><span class="ms" style="font-size:17px; color:#0B95FF;">widgets</span><span style="font-size:13px; color:#6D6D74;"><span style="font-weight:700; color:#161617; font-family:'Nunito Sans',sans-serif;">86</span> elements</span></div>
+          </div>
+          <div style="border:1px solid #E2E2E3; border-radius:10px; overflow:hidden; background:#fff;">
+            <div style="display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid #E2E2E3; background:#F8FAFC;">
+              <div style="width:28px; height:28px; border-radius:7px; background:#EEF2FF; display:flex; align-items:center; justify-content:center;"><span class="ms" style="font-size:17px; color:#3F43EE;">language</span></div>
+              <div style="font-size:13.5px; font-weight:700; color:#161617;">{{ reviewUrl }}</div>
+              <div style="flex:1;"></div>
+              <div style="font-size:11px; color:#9CA3AF;">Discovered site structure</div>
+            </div>
+            <sc-for list="{{ reviewMap }}" as="f" hint-placeholder-count="4">
+              <div style="display:flex; align-items:center; gap:12px; padding:13px 16px 13px 30px; border-bottom:1px solid #F4F4F5; position:relative;">
+                <span style="position:absolute; left:18px; top:0; bottom:0; width:1px; background:#EAEAEC;"></span>
+                <span style="position:absolute; left:18px; top:50%; width:9px; height:1px; background:#EAEAEC;"></span>
+                <span class="ms" style="font-size:18px; color:#6D28D9;">account_tree</span>
+                <div style="min-width:0;">
+                  <div style="font-size:13.5px; font-weight:600; color:#161617;">{{ f.name }}</div>
+                  <div style="font-family:'SF Mono',ui-monospace,Menlo,monospace; font-size:11px; color:#9CA3AF; margin-top:2px;">{{ f.route }}</div>
+                </div>
+                <div style="flex:1;"></div>
+                <div style="display:flex; align-items:center; gap:16px; font-size:11.5px; color:#6D6D74;">
+                  <span><span style="font-weight:700; color:#161617;">{{ f.pages }}</span> pages</span>
+                  <span><span style="font-weight:700; color:#161617;">{{ f.elements }}</span> elements</span>
+                  <span style="display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:700; color:#3F43EE; background:#EEF2FF; padding:3px 10px; border-radius:999px;"><span class="ms" style="font-size:12px;">fact_check</span>{{ f.cases }} cases</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="height:8px;"></div>
+        </sc-if>
+
+        <!-- ===== Activity panel ===== -->
+        <sc-if value="{{ rvShowActivity }}">
+          <div style="border:1px solid #E2E2E3; border-radius:10px; background:#fff; padding:18px 20px; margin-bottom:14px;">
+            <div style="font-size:13px; font-weight:700; color:#161617; margin-bottom:16px;">Crawl timeline</div>
+            <div style="display:flex; flex-direction:column;">
+              <sc-for list="{{ reviewTimeline }}" as="t" hint-placeholder-count="5">
+                <div style="display:flex; gap:13px; position:relative; padding-bottom:18px;">
+                  <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
+                    <div style="width:22px; height:22px; border-radius:999px; background:#0DBD7D; display:flex; align-items:center; justify-content:center; z-index:1;"><span class="ms" style="font-size:14px; color:#fff;">check</span></div>
+                    <span style="flex:1; width:2px; background:#E5E7EB; margin-top:2px; display:{{ t.lineShow }};"></span>
+                  </div>
+                  <div style="padding-top:1px; min-width:0; flex:1;">
+                    <div style="display:flex; align-items:baseline; gap:8px;"><span style="font-size:13px; font-weight:600; color:#161617;">{{ t.stage }}</span><span style="font-size:11.5px; color:#9CA3AF; font-family:'Nunito Sans',sans-serif; font-feature-settings:'tnum';">{{ t.dur }}</span></div>
+                    <div style="font-size:12px; color:#6D6D74; margin-top:2px;">{{ t.desc }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="border:1px solid #E2E2E3; border-radius:10px; background:#fff; padding:18px 20px;">
+            <div style="font-size:13px; font-weight:700; color:#161617; margin-bottom:14px;">Activity log</div>
+            <div style="display:flex; flex-direction:column; gap:13px;">
+              <sc-for list="{{ logs }}" as="l" hint-placeholder-count="6">
+                <div style="display:flex; align-items:flex-start; gap:11px;">
+                  <span class="ms" style="font-size:17px; color:{{ l.color }}; flex-shrink:0; margin-top:1px;">{{ l.icon }}</span>
+                  <div style="font-size:12.5px; color:#364153; line-height:1.5;">{{ l.text }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="height:8px;"></div>
+        </sc-if>
+
+        <!-- ===== Gaps panel ===== -->
+        <sc-if value="{{ rvShowGaps }}">
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px; background:#F8FAFC; border:1px solid #E2E2E3; border-radius:9px; padding:11px 14px;">
+            <span class="ms" style="font-size:18px; color:#6D6D74;">travel_explore</span>
+            <div style="font-size:12.5px; color:#364153; line-height:1.45;"><span style="font-weight:700; color:#161617;">{{ gapsCount }} coverage gaps</span> — areas the crawl couldn't fully reach. Each is a candidate for a manual test; nothing here blocks the drafts above.</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:13px;">
+            <sc-for list="{{ reviewGaps }}" as="g" hint-placeholder-count="4">
+              <div style="border:1px solid #E2E2E3; border-left:3px solid #3F43EE; border-radius:10px; background:#fff; padding:17px 19px;">
+                <div style="font-size:15px; font-weight:700; color:#161617;">{{ g.title }}</div>
+                <div style="display:flex; align-items:center; gap:13px; margin-top:13px;">
+                  <span style="font-size:12.5px; color:#6D6D74; flex-shrink:0;">Coverage</span>
+                  <div style="flex:1; height:7px; border-radius:999px; background:#EDEDF0; overflow:hidden;"><div style="height:100%; width:{{ g.barWidth }}; background:{{ g.barColor }}; border-radius:999px;"></div></div>
+                  <span style="font-size:13px; font-weight:700; color:{{ g.pctColor }}; flex-shrink:0;">{{ g.pctLabel }}</span>
+                </div>
+                <div style="margin-top:13px;"><span style="display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; color:#5559E8; background:#EEF0FF; border:1px solid #DDE0FF; padding:3px 10px; border-radius:6px;"><span class="ms" style="font-size:13px;">sell</span>{{ g.flow }}</span></div>
+                <div style="margin-top:13px; background:#F8FAFC; border:1px solid #EDEDF0; border-radius:8px; padding:11px 13px; font-size:12.5px; color:#364153; line-height:1.5;"><span style="font-weight:700; color:#161617;">Why missing:</span> {{ g.why }}</div>
+                <div style="display:flex; justify-content:flex-end; margin-top:13px;"><div onClick="{{ g.open }}" style="display:flex; align-items:center; gap:5px; font-size:13px; font-weight:600; color:#3F43EE; cursor:pointer;">View details<span class="ms" style="font-size:16px;">arrow_forward</span></div></div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="height:8px;"></div>
+        </sc-if>
+      </div>
+
+      <!-- Floating selection pill (Cases tab, when rows selected) -->
+      <sc-if value="{{ selPillShow }}">
+      <div style="position:absolute; bottom:84px; left:50%; transform:translateX(-50%); z-index:1400; display:flex; align-items:center; gap:24px; background:#3F43EE; color:#fff; padding:11px 16px 11px 22px; border-radius:13px; box-shadow:0 14px 34px rgba(63,67,238,.38);">
+        <span style="font-size:14px; font-weight:600;">{{ selectedCount }} selected</span>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div onClick="{{ acceptSelected }}" style="display:flex; align-items:center; gap:7px; height:36px; padding:0 15px; border-radius:9px; font-size:13px; font-weight:600; cursor:pointer; background:rgba(255,255,255,.12);" style-hover="background:rgba(255,255,255,.22);"><span class="ms" style="font-size:18px;">check_circle</span>Accept All</div>
+          <div onClick="{{ rejectSelected }}" style="display:flex; align-items:center; gap:7px; height:36px; padding:0 15px; border-radius:9px; font-size:13px; font-weight:600; cursor:pointer; background:rgba(255,255,255,.12);" style-hover="background:rgba(255,255,255,.22);"><span class="ms" style="font-size:18px;">cancel</span>Reject All</div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- Sticky footer (Cases tab only) -->
+      <sc-if value="{{ rvShowCases }}">
+      <div style="flex-shrink:0; border-top:1px solid #E2E2E3; padding:13px 26px; display:flex; align-items:center; gap:10px; background:#fff;">
+        <div style="font-size:12.5px; color:#6D6D74;"><span style="font-weight:700; color:#161617;">{{ acceptedCount }}</span> accepted · <span style="font-weight:700; color:#161617;">{{ pendingCount }}</span> pending review</div>
+        <div style="flex:1;"></div>
+        <div onClick="{{ addAccepted }}" style="height:42px; padding:0 22px; border-radius:8px; display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600; color:#fff; cursor:pointer; background:{{ addBg }}; box-shadow:{{ addShadow }};"><span class="ms" style="font-size:18px;">playlist_add_check</span>Add {{ acceptedCount }} accepted to suite</div>
+      </div>
+      </sc-if>
+    </div>
+    </sc-if>
+
+    <!-- ===== Gap detail drawer ===== -->
+    <sc-if value="{{ gapDrawerOpen }}">
+      <div onClick="{{ closeGap }}" style="position:absolute; inset:0; z-index:1600; background:rgba(22,22,23,.34);"></div>
+      <div style="position:absolute; top:0; right:0; bottom:0; z-index:1601; width:430px; background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18); display:flex; flex-direction:column;">
+        <div style="flex-shrink:0; padding:24px 26px 0 26px;">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+            <div style="font-size:19px; font-weight:700; color:#161617;">{{ gapDrawer.title }}</div>
+            <div onClick="{{ closeGap }}" style="width:32px; height:32px; flex-shrink:0; display:flex; align-items:center; justify-content:center; border-radius:8px; cursor:pointer; color:#6D6D74;" style-hover="background:#F1F1F2;"><span class="ms" style="font-size:20px;">close</span></div>
+          </div>
+          <div style="margin-top:11px;"><span style="display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; color:#5559E8; background:#EEF0FF; border:1px solid #DDE0FF; padding:3px 10px; border-radius:6px;"><span class="ms" style="font-size:13px;">sell</span>{{ gapDrawer.flow }}</span></div>
+        </div>
+        <div style="flex:1; overflow-y:auto; padding:20px 26px 26px 26px;">
+          <div style="display:flex; align-items:center; gap:16px; background:#F8FAFC; border:1px solid #EDEDF0; border-radius:11px; padding:16px 18px;">
+            <div style="width:64px; height:64px; border-radius:999px; flex-shrink:0; background:conic-gradient({{ gapDrawer.barColor }} {{ gapDrawer.pctLabel }}, #EDEDF0 0); display:flex; align-items:center; justify-content:center;"><div style="width:48px; height:48px; border-radius:999px; background:#fff; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; color:{{ gapDrawer.pctColor }};">{{ gapDrawer.pctLabel }}</div></div>
+            <div style="min-width:0;">
+              <div style="font-size:12px; color:#6D6D74; font-weight:600;">Coverage score</div>
+              <div style="font-size:13.5px; color:#161617; line-height:1.45; margin-top:3px;">{{ gapDrawer.scoreLabel }}</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; margin:22px 0 12px 0;">
+            <span style="font-size:15px; font-weight:700; color:#161617;">What's missing</span>
+            <span style="font-size:11.5px; font-weight:700; color:#6D6D74; background:#F1F1F2; min-width:20px; height:20px; padding:0 6px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center;">{{ gapDrawer.missingCount }}</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:9px;">
+            <sc-for list="{{ gapDrawer.missingItems }}" as="m" hint-placeholder-count="2">
+              <div style="display:flex; align-items:flex-start; gap:10px; background:#FFFBEB; border:1px solid #FCE9B6; border-radius:9px; padding:12px 14px;">
+                <span class="ms" style="font-size:18px; color:#B98900; flex-shrink:0;">error_outline</span>
+                <div style="font-size:13px; color:#364153; line-height:1.45;">{{ m }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="flex-shrink:0; border-top:1px solid #F1F1F2; padding:16px 26px; display:flex; gap:10px;">
+          <div onClick="{{ closeGap }}" style="height:42px; padding:0 22px; border-radius:8px; display:flex; align-items:center; font-size:13.5px; font-weight:600; color:#364153; cursor:pointer; box-shadow:inset 0 0 0 1px #E2E2E3;" style-hover="background:#F8FAFC;">Close</div>
+          <div style="flex:1;"></div>
+          <div style="height:42px; padding:0 20px; border-radius:8px; display:flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#fff; cursor:pointer; background:#3F43EE; box-shadow:0 1px 2px rgba(0,0,0,.12);"><span class="ms" style="font-size:18px;">add</span>Add manual test</div>
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+  </sc-if>
+
+  <!-- ============ BACKGROUND COMPLETION TOAST ============ -->
+  <sc-if value="{{ toastShown }}">
+    <div style="position:absolute; bottom:24px; left:50%; transform:translateX(-50%); z-index:2000; display:flex; align-items:center; gap:14px; background:#161617; color:#fff; padding:14px 18px; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,.32); animation:acx-toast .3s ease-out;">
+      <div style="width:32px; height:32px; border-radius:999px; background:#0DBD7D; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><span class="ms" style="font-size:19px;">check</span></div>
+      <div>
+        <div style="font-size:13.5px; font-weight:600;">Auto Crawl finished</div>
+        <div style="font-size:12px; color:rgba(255,255,255,.7); margin-top:1px;">{{ totalCases }} test cases ready to review</div>
+      </div>
+      <div onClick="{{ goReview }}" style="margin-left:6px; height:34px; padding:0 15px; border-radius:8px; display:flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; color:#fff; background:#3F43EE; cursor:pointer;">Review<span class="ms" style="font-size:16px;">arrow_forward</span></div>
+      <div onClick="{{ dismissToast }}" style="width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.6); cursor:pointer;" style-hover="background:rgba(255,255,255,.1);"><span class="ms" style="font-size:18px;">close</span></div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360,&quot;height&quot;:860},&quot;defaultCrawlMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;safe&quot;,&quot;full&quot;],&quot;default&quot;:&quot;safe&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;autoAdvanceOnComplete&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.STAGES = ['Connecting', 'Exploring', 'Mapping', 'Generating', 'Ready for review'];
+    this.GROUPS = [
+      { id: 'g1', name: 'Authentication', route: '/login · /account', cases: [
+        { id: 'c1', title: 'User can sign in with valid credentials', tag: 'Positive', steps: 5, desc: 'Signs in with a valid email and password and lands on the dashboard.', prereq: 'A registered account exists on the target environment.', vars: ['base_url', 'test_email', 'test_password'] },
+        { id: 'c2', title: 'Sign-in rejects an invalid password', tag: 'Negative', steps: 4, desc: 'Submits a wrong password and expects an inline error.', prereq: 'A registered account exists; an invalid password is prepared.', vars: ['base_url', 'test_email'] },
+        { id: 'c3', title: 'Password reset sends a recovery email', tag: 'E2E', steps: 7, desc: 'Requests a reset link and confirms the recovery email is sent.', prereq: 'A registered account with a reachable recovery inbox.', vars: ['base_url', 'recovery_email'] },
+      ]},
+      { id: 'g2', name: 'Product browsing', route: '/products', cases: [
+        { id: 'c4', title: 'Product grid loads all 12 items', tag: 'Positive', steps: 3, desc: 'Loads /products and asserts all 12 product cards render.', prereq: 'Storefront reachable with a seeded catalog of 12 items.', vars: ['base_url'] },
+        { id: 'c5', title: 'Search returns relevant products', tag: 'Positive', steps: 4, desc: 'Searches a known term and checks that relevant results appear.', prereq: 'Catalog seeded with searchable products.', vars: ['base_url', 'search_term'] },
+        { id: 'c6', title: 'Filtering by category narrows results', tag: 'Functional', steps: 5, desc: 'Applies a category filter and verifies the grid narrows.', prereq: 'Catalog has products across multiple categories.', vars: ['base_url', 'category'] },
+        { id: 'c7', title: 'Search with no matches shows an empty state', tag: 'Edge', steps: 4, desc: 'Searches a missing term and expects the empty-state view.', prereq: 'Search index reachable; a no-match term prepared.', vars: ['base_url', 'missing_term'] },
+      ]},
+      { id: 'g3', name: 'Cart & checkout', route: '/cart · /checkout', cases: [
+        { id: 'c8', title: 'Add to cart updates the cart count', tag: 'Positive', steps: 4, desc: 'Adds an item and asserts the cart count increments.', prereq: 'At least one product is in stock.', vars: ['base_url', 'product_id'] },
+        { id: 'c9', title: 'Checkout completes with a valid card', tag: 'E2E', steps: 9, desc: 'Completes checkout with a valid card and reaches confirmation.', prereq: 'A signed-in account with a saved test card.', vars: ['base_url', 'card_number', 'test_email'] },
+        { id: 'c10', title: 'Checkout blocks an invalid card number', tag: 'Negative', steps: 6, desc: 'Enters an invalid card number and expects checkout to block.', prereq: 'Checkout reachable with a cart containing items.', vars: ['base_url', 'invalid_card'] },
+        { id: 'c11', title: 'Coupon code applies the right discount', tag: 'Functional', steps: 6, desc: 'Applies a coupon and verifies the discounted total.', prereq: 'A valid coupon code is active.', vars: ['base_url', 'coupon_code'] },
+        { id: 'c12', title: 'Empty cart prevents checkout', tag: 'Edge', steps: 3, desc: 'Attempts checkout with an empty cart and expects it blocked.', prereq: 'Cart is empty for the session.', vars: ['base_url'] },
+      ]},
+      { id: 'g4', name: 'Account settings', route: '/account', cases: [
+        { id: 'c13', title: 'Updating profile saves changes', tag: 'Positive', steps: 5, desc: 'Edits profile fields and confirms the changes persist.', prereq: 'User is signed in to the account area.', vars: ['base_url', 'test_email'] },
+        { id: 'c14', title: 'Changing email requires re-authentication', tag: 'Negative', steps: 6, desc: 'Changes the account email and expects a re-auth prompt.', prereq: 'User is signed in; email change requires re-auth.', vars: ['base_url', 'new_email', 'test_password'] },
+      ]},
+    ];
+    this.LOGS = [
+      { icon: 'widgets', color: '#3F43EE', text: '86 interactive elements detected across 12 pages.' },
+      { icon: 'block', color: '#9CA3AF', text: '2 pages skipped — excluded by /admin rule.' },
+      { icon: 'alt_route', color: '#0B95FF', text: '1 redirect followed — /cart → /checkout.' },
+      { icon: 'lock', color: '#0DBD7D', text: '1 auth-required page (/account) — signed in via Staging environment.' },
+      { icon: 'gpp_maybe', color: '#B98900', text: '1 page rate-limited — retried after 2s.' },
+      { icon: 'shield', color: '#0DBD7D', text: '0 pages blocked.' },
+    ];
+    this.SCRIPT = [
+      { stage: 'Connecting', action: 'Spinning up a headless browser on ContextQA cloud', url: 'shopflow.app', cursor: { l: '48%', t: '42%' }, scan: 'Connecting', event: { type: 'explore', text: 'Session started — no extension required' } },
+      { stage: 'Exploring', action: 'Loading homepage and indexing interactive elements', url: 'shopflow.app', cursor: { l: '70%', t: '14%' }, scan: 'Scanning homepage', hl: { l: '60%', t: '6%', w: '20%', h: '20%', label: 'Search field — 1 input' }, dp: 2, de: 16, event: { type: 'found', text: 'Indexed homepage — 16 elements' } },
+      { stage: 'Exploring', action: 'Following primary navigation to Products', cursor: { l: '34%', t: '14%' }, scan: 'Exploring /products', hl: { l: '27%', t: '6%', w: '14%', h: '20%', label: 'Products nav link' }, dp: 2, df: 1, event: { type: 'explore', text: 'Navigated to /products' } },
+      { stage: 'Exploring', action: 'Indexing product grid — 12 items with "Add to cart"', url: 'shopflow.app/products', cursor: { l: '80%', t: '64%' }, scan: 'Scanning product grid', hl: { l: '68%', t: '52%', w: '24%', h: '16%', label: 'Add to cart — button' }, dp: 2, de: 24, dc: 3, event: { type: 'found', text: 'Discovered product browsing flow' } },
+      { stage: 'Exploring', action: 'Opening cart and proceeding to checkout', cursor: { l: '90%', t: '14%' }, scan: 'Exploring /cart', hl: { l: '84%', t: '6%', w: '12%', h: '20%', label: 'Cart icon' }, dp: 1, df: 1, event: { type: 'explore', text: 'Opened cart drawer' } },
+      { stage: 'Exploring', action: 'Exploring /checkout — found a payment form', url: 'shopflow.app/checkout', cursor: { l: '52%', t: '88%' }, scan: 'Scanning /checkout', hl: { l: '40%', t: '82%', w: '34%', h: '14%', label: 'Payment form — 3 inputs' }, dp: 2, de: 13, dc: 4, event: { type: 'found', text: 'Payment form detected on /checkout' } },
+      { stage: 'Mapping', action: 'Detecting validation rules on checkout fields', cursor: { l: '24%', t: '88%' }, scan: 'Mapping checkout', hl: { l: '12%', t: '82%', w: '26%', h: '14%', label: 'Card number — validation' }, dp: 1, de: 6, dc: 3, event: { type: 'generate', text: 'Drafting negative cases for invalid card' } },
+      { stage: 'Mapping', action: 'Following Account — sign-in required area', url: 'shopflow.app/account', cursor: { l: '94%', t: '14%' }, scan: 'Mapping /account', hl: { l: '88%', t: '6%', w: '9%', h: '20%', label: 'Account menu' }, dp: 2, de: 9, df: 1, dc: 2, event: { type: 'explore', text: 'Mapped account & settings flow' } },
+      { stage: 'Generating', action: 'Synthesizing test cases from discovered flows', cursor: { l: '48%', t: '42%' }, scan: 'Generating test cases', de: 2, df: 1, dc: 2, event: { type: 'generate', text: 'Generating end-to-end scenarios' } },
+    ];
+    const sel = {}, open = {};
+    this.GROUPS.forEach(g => { open[g.id] = true; g.cases.forEach(c => sel[c.id] = true); });
+    this.state = {
+      screen: 'method', method: 'crawl', layout: 'featured',
+      url: '', describe: '',
+      authMode: 'env', env: 'Staging', crawlMode: (props.defaultCrawlMode || 'safe'),
+      configOpen: false, decisions: {},
+      tPages: 0, tFlows: 0, tCases: 0, tElements: 0, pages: 0, flows: 0, cases: 0,
+      stage: 'Idle', action: '', scanLabel: 'Connecting', crawlUrl: 'shopflow.app',
+      cursorLeft: '48%', cursorTop: '42%',
+      hlLeft: '40%', hlTop: '12%', hlW: '14%', hlH: '14%', hlOpacity: 0, hlLabel: '',
+      events: [], elapsed: 0, step: 0, done: false, background: false, toastShown: false,
+      activeTab: 'activity', reviewTab: 'cases',
+      selById: sel, openById: open,
+      saveApproval: true, saveSuite: false, savePlan: false,
+    };
+  }
+
+  componentWillUnmount() { this.clearTimers(); }
+  clearTimers() { [this.t1, this.t2, this.t3].forEach(t => t && clearInterval(t)); this.t1 = this.t2 = this.t3 = null; }
+  fmt(s) { const m = Math.floor(s / 60), ss = s % 60; return m + ':' + String(ss).padStart(2, '0'); }
+
+  select(m) { this.setState({ method: m }); }
+  setLayout(l) { this.setState({ layout: l }); }
+  setF(k) { return (e) => this.setState({ [k]: e.target.value }); }
+  setAuth(m) { this.setState({ authMode: m }); }
+  setMode(m) { this.setState({ crawlMode: m }); }
+
+  goConfig() { this.setState({ screen: 'config' }); }
+  backToMethod() { this.clearTimers(); this.setState({ screen: 'method' }); }
+  execBack() { this.clearTimers(); this.setState({ screen: 'config' }); }
+  setTab(t) { this.setState({ activeTab: t }); }
+  setReviewTab(t) { this.setState({ reviewTab: t }); }
+
+  startCrawl() {
+    if (!this.state.url.trim() || !this.state.describe.trim()) return;
+    this.clearTimers();
+    this.setState({
+      screen: 'crawl', step: 0, done: false, background: false, toastShown: false, elapsed: 0,
+      tPages: 0, tFlows: 0, tCases: 0, tElements: 0, pages: 0, flows: 0, cases: 0,
+      stage: 'Connecting', action: 'Initializing crawl…', scanLabel: 'Connecting',
+      crawlUrl: this.cleanUrl(), activeTab: 'activity',
+      cursorLeft: '48%', cursorTop: '42%', hlOpacity: 0, events: [],
+    });
+    this.t1 = setInterval(() => this.setState(s => ({ elapsed: s.elapsed + 1 })), 1000);
+    this.t2 = setInterval(() => this.tween(), 110);
+    this.t3 = setInterval(() => this.advance(), 1700);
+    setTimeout(() => this.advance(), 300);
+  }
+
+  cleanUrl() {
+    let u = this.state.url.trim().replace(/^https?:\/\//, '').replace(/\/$/, '');
+    return u || 'shopflow.app';
+  }
+
+  advance() {
+    const i = this.state.step;
+    if (i >= this.SCRIPT.length) { this.finish(); return; }
+    const s = this.SCRIPT[i];
+    this.setState(prev => {
+      const events = s.event ? [{ ...s.event, time: this.fmt(prev.elapsed) }, ...prev.events] : prev.events;
+      return {
+        step: i + 1,
+        stage: s.stage != null ? s.stage : prev.stage,
+        action: s.action,
+        scanLabel: s.scan != null ? s.scan : prev.scanLabel,
+        crawlUrl: s.url != null ? s.url : prev.crawlUrl,
+        cursorLeft: s.cursor ? s.cursor.l : prev.cursorLeft,
+        cursorTop: s.cursor ? s.cursor.t : prev.cursorTop,
+        hlLeft: s.hl ? s.hl.l : prev.hlLeft,
+        hlTop: s.hl ? s.hl.t : prev.hlTop,
+        hlW: s.hl ? s.hl.w : prev.hlW,
+        hlH: s.hl ? s.hl.h : prev.hlH,
+        hlLabel: s.hl ? s.hl.label : prev.hlLabel,
+        hlOpacity: s.hl ? 1 : 0,
+        tPages: prev.tPages + (s.dp || 0),
+        tFlows: prev.tFlows + (s.df || 0),
+        tCases: prev.tCases + (s.dc || 0),
+        tElements: prev.tElements + (s.de || 0),
+        events,
+      };
+    });
+  }
+
+  tween() {
+    const nudge = (c, t) => {
+      if (c === t) return c;
+      const d = t - c;
+      const step = Math.sign(d) * Math.max(1, Math.ceil(Math.abs(d) / 6));
+      return Math.abs(step) >= Math.abs(d) ? t : c + step;
+    };
+    this.setState(s => ({ pages: nudge(s.pages, s.tPages), flows: nudge(s.flows, s.tFlows), cases: nudge(s.cases, s.tCases) }));
+  }
+
+  finish() {
+    this.clearTimers();
+    this.setState(s => ({ done: true, stage: 'Ready for review', scanLabel: 'Crawl complete', hlOpacity: 0, action: 'Crawl complete — review the generated test cases', pages: s.tPages, flows: s.tFlows, cases: s.tCases }));
+    if (this.state.background) {
+      setTimeout(() => this.setState({ toastShown: true }), 400);
+    } else if (this.props.autoAdvanceOnComplete) {
+      setTimeout(() => this.goReview(), 1400);
+    }
+  }
+
+  runBackground() { this.setState({ background: true }); }
+  stopKeep() { this.clearTimers(); this.goReview(); }
+  goReview() {
+    this.clearTimers();
+    this.setState({ screen: 'review', background: false, toastShown: false, pages: 12, flows: 4, cases: 14 });
+  }
+  setDecision(id, d) { this.setState(s => ({ decisions: { ...s.decisions, [id]: d } })); }
+  acceptCase(id) { this.setDecision(id, 'accepted'); }
+  rejectCase(id) { this.setDecision(id, 'rejected'); }
+  acceptAllCases() { this.setState(s => { const d = { ...s.decisions }; this.GROUPS.forEach(g => g.cases.forEach(c => { if ((d[c.id] || 'pending') !== 'rejected') d[c.id] = 'accepted'; })); return { decisions: d }; }); }
+  rejectSelectedCases() { this.setState(s => { const d = { ...s.decisions }; this.GROUPS.forEach(g => g.cases.forEach(c => { if (s.selById[c.id]) d[c.id] = 'rejected'; })); return { decisions: d }; }); }
+  acceptSelectedCases() { this.setState(s => { const d = { ...s.decisions }; this.GROUPS.forEach(g => g.cases.forEach(c => { if (s.selById[c.id]) d[c.id] = 'accepted'; })); return { decisions: d }; }); }
+  openGapDetail(id) { this.setState({ openGap: id }); }
+  closeGapDetail() { this.setState({ openGap: null }); }
+  dismissToast() { this.setState({ toastShown: false }); }
+
+  toggleCase(id) { this.setState(s => ({ selById: { ...s.selById, [id]: !s.selById[id] } })); }
+  toggleOpen(id) { this.setState(s => ({ openById: { ...s.openById, [id]: !s.openById[id] } })); }
+  toggleGroupSel(gid, val) {
+    this.setState(s => { const sel = { ...s.selById }; this.GROUPS.find(g => g.id === gid).cases.forEach(c => sel[c.id] = val); return { selById: sel }; });
+  }
+  setAllSel(val) {
+    this.setState(s => { const sel = { ...s.selById }; this.GROUPS.forEach(g => g.cases.forEach(c => sel[c.id] = val)); return { selById: sel }; });
+  }
+
+  renderVals() {
+    const st = this.state;
+    const RING_SEL = 'inset 0 0 0 2px #3F43EE';
+    const RING_OFF = 'inset 0 0 0 1px #E2E2E3';
+    const SEL_BG = 'rgba(99,102,241,.10)';
+    const dot = (on) => on ? '5px #3F43EE' : '1.5px #CBD5E1';
+    const cb = (on) => ({ bg: on ? '#3F43EE' : '#fff', ring: on ? 'none' : 'inset 0 0 0 1.5px #CBD5E1', show: on ? 'flex' : 'none' });
+
+    const isCrawl = st.screen === 'crawl', isReview = st.screen === 'review';
+    const stepN = st.screen === 'method' ? 1 : st.screen === 'config' ? 2 : st.screen === 'crawl' ? 3 : 4;
+
+    // stage stepper
+    const sIdx = this.STAGES.indexOf(st.stage);
+    const stages = this.STAGES.map((label, i) => {
+      const done = sIdx > i, active = sIdx === i;
+      return {
+        label, n: i + 1, isLast: i === this.STAGES.length - 1,
+        bg: done || active ? '#3F43EE' : '#EEF0F4',
+        fg: done || active ? '#fff' : '#9CA3AF',
+        ring: active ? '0 0 0 4px rgba(63,67,238,.15)' : 'none',
+        checkShow: done ? 'inline-block' : 'none',
+        numShow: done ? 'none' : 'inline',
+        weight: active ? 700 : 500,
+        labelColor: done || active ? '#161617' : '#9CA3AF',
+        lineColor: sIdx > i ? '#3F43EE' : '#E5E7EB',
+        lineShow: i === this.STAGES.length - 1 ? 'none' : 'block',
+      };
+    });
+
+    // status pill — matches stage exactly
+    const running = isCrawl && !st.done;
+    const pill = st.done
+      ? { bg: '#E7F8F1', border: '#BCEBD8', dot: '#0DBD7D', fg: '#08543A', anim: 'none' }
+      : { bg: 'rgba(99,102,241,.10)', border: '#D8D9FC', dot: '#3F43EE', fg: '#3F43EE', anim: 'acx-blink 1.1s infinite' };
+
+    // events
+    const evMap = {
+      found: { icon: 'check_circle', color: '#0DBD7D', bg: '#E7F8F1' },
+      explore: { icon: 'arrow_forward', color: '#0B95FF', bg: '#E5F3FF' },
+      generate: { icon: 'auto_awesome', color: '#3F43EE', bg: 'rgba(99,102,241,.10)' },
+    };
+    const events = st.events.map(e => ({ ...e, ...evMap[e.type] }));
+
+    // map flows
+    const mapFlows = this.GROUPS.map(g => ({
+      name: g.name, count: g.cases.length, open: !!st.openById[g.id],
+      chevron: st.openById[g.id] ? 'expand_less' : 'expand_more',
+      cases: g.cases.map(c => ({ title: c.title })),
+      onToggle: () => this.toggleOpen(g.id),
+    }));
+
+    // ===== Review sub-tabs: Crawl Map / Activity / Gaps =====
+    const rvTab = st.reviewTab || 'cases';
+    const rvSty = (on) => ({ fg: on ? '#3F43EE' : '#6D6D74', wt: on ? 600 : 400, bd: on ? '#3F43EE' : 'transparent' });
+    const rc = rvSty(rvTab === 'cases'), rmp = rvSty(rvTab === 'map'), rac = rvSty(rvTab === 'activity'), rg = rvSty(rvTab === 'gaps');
+    const flowMeta = { g1: { pages: 2, elements: 18 }, g2: { pages: 3, elements: 28 }, g3: { pages: 3, elements: 24 }, g4: { pages: 1, elements: 9 } };
+    const reviewMap = this.GROUPS.map(g => ({
+      name: g.name, route: g.route, cases: g.cases.length,
+      pages: (flowMeta[g.id] || {}).pages || 1, elements: (flowMeta[g.id] || {}).elements || 0,
+    }));
+    const reviewTimeline = [
+      { stage: 'Connecting', dur: '0:02', desc: 'Headless browser spun up on ContextQA cloud' },
+      { stage: 'Exploring', dur: '0:06', desc: 'Crawled 12 pages, indexed 86 interactive elements' },
+      { stage: 'Mapping', dur: '0:04', desc: 'Detected 4 flows and field-level validation rules' },
+      { stage: 'Generating', dur: '0:03', desc: 'Synthesized 14 test cases with steps' },
+      { stage: 'Ready for review', dur: '', desc: 'Drafts ready — awaiting your review', last: true },
+    ].map((t, i, a) => ({ ...t, lineShow: i < a.length - 1 ? 'block' : 'none' }));
+    const gapsRaw = [
+      { id: 'gp1', title: 'Payment capture', flow: 'Cart & checkout', pct: 25, why: 'Checkout drafts stop before a real charge — safe mode blocks live payments. Re-run with a sandbox card to extend the end-to-end case.', missing: ['Successful card charge confirmation', 'Order receipt / confirmation email', 'Post-payment inventory decrement'] },
+      { id: 'gp2', title: 'Password-reset email', flow: 'Authentication', pct: 40, why: 'The reset request is covered, but the email lands in an external inbox the crawl can\u2019t reach.', missing: ['Reset link delivered to inbox', 'New password submitted via emailed link'] },
+      { id: 'gp3', title: 'Admin pages', flow: 'Excluded', pct: 0, why: 'Excluded by your /admin crawl rule. Add manual coverage if these pages need tests.', missing: ['/admin dashboard', '/admin user management', '/admin settings'] },
+      { id: 'gp4', title: 'Search under load', flow: 'Product browsing', pct: 60, why: '/search was rate-limited and retried after 2s — coverage there may be partial under sustained load.', missing: ['High-volume query pagination'] },
+    ];
+    const covColor = (p) => p < 34 ? { fg: '#DC2626', bar: '#EF4444' } : p < 67 ? { fg: '#D97706', bar: '#F59E0B' } : { fg: '#16A34A', bar: '#22C55E' };
+    const covLabel = (p) => p < 34 ? 'Low coverage — significant gaps in this area' : p < 67 ? 'Partial coverage — some gaps remain' : 'Good coverage — minor gaps only';
+    const reviewGaps = gapsRaw.map(g => { const c = covColor(g.pct); return { ...g, pctLabel: g.pct + '%', pctColor: c.fg, barColor: c.bar, barWidth: g.pct + '%', missingCount: g.missing.length, open: () => this.openGapDetail(g.id) }; });
+    const openGapObj = reviewGaps.find(g => g.id === st.openGap) || null;
+    const gapDrawer = openGapObj ? { ...openGapObj, scoreLabel: covLabel(openGapObj.pct), missingItems: openGapObj.missing } : null;
+
+    // tabs
+    const tab = st.activeTab;
+    const tabSty = (on) => ({ fg: on ? '#3F43EE' : '#6D6D74', wt: on ? 600 : 400, bd: on ? '#3F43EE' : 'transparent' });
+    const ta = tabSty(tab === 'activity'), tm = tabSty(tab === 'map'), tl = tabSty(tab === 'logs');
+
+    // ===== Review: flat generated-cases table (requirements-style) =====
+    const typeMeta = {
+      Positive:   { label: 'Positive',   bg: '#D1FAE5', bd: '#34D399', fg: '#059669' },
+      Negative:   { label: 'Negative',   bg: '#FEE2E2', bd: '#FCA5A5', fg: '#DC2626' },
+      Edge:       { label: 'Edge',       bg: '#FEF3C7', bd: '#FCD34D', fg: '#D97706' },
+      Functional: { label: 'Functional', bg: '#E0F7F7', bd: '#67E8F9', fg: '#0891B2' },
+      E2E:        { label: 'End to End', bg: '#DBEAFE', bd: '#93C5FD', fg: '#2563EB' },
+    };
+    const priByType = { Negative: 'High', E2E: 'High', Functional: 'Medium', Edge: 'Medium', Positive: 'Low' };
+    const priMeta = { High: ['#FEE2E2', '#FCA5A5', '#DC2626'], Medium: ['#FEF3C7', '#FCD34D', '#D97706'], Low: ['#F2F4F7', '#E5E7EB', '#667085'] };
+    const decs = st.decisions || {};
+    let gi = 0, selectedCount = 0, acceptedCount = 0, pendingCount = 0;
+    const typeCounts = {};
+    const reviewCases = [];
+    this.GROUPS.forEach(g => g.cases.forEach(c => {
+      gi++;
+      const dec = decs[c.id] || 'pending';
+      if (dec === 'rejected') return;
+      typeCounts[c.tag] = (typeCounts[c.tag] || 0) + 1;
+      const on = !!st.selById[c.id]; if (on) selectedCount++;
+      const accepted = dec === 'accepted';
+      if (accepted) acceptedCount++; else pendingCount++;
+      const tmeta = typeMeta[c.tag] || typeMeta.Functional;
+      const pr = priByType[c.tag] || 'Medium'; const pm = priMeta[pr];
+      const box = cb(on);
+      reviewCases.push({
+        id: c.id, idLabel: 'AC-' + String(gi).padStart(3, '0'), title: c.title, desc: c.desc, prereq: c.prereq, flowName: g.name,
+        vars: (c.vars || []).map(v => ({ name: '${' + v + '}' })),
+        tagLabel: tmeta.label, tagBg: tmeta.bg, tagBd: tmeta.bd, tagFg: tmeta.fg,
+        pri: pr, priBg: pm[0], priBd: pm[1], priFg: pm[2],
+        boxBg: box.bg, boxRing: box.ring, checkShow: box.show, rowBg: on ? 'rgba(99,102,241,.04)' : '#fff',
+        decBg: accepted ? '#D1FAE5' : '#FEF3C7', decBd: accepted ? '#34D399' : '#FCD34D', decFg: accepted ? '#059669' : '#D97706',
+        decIcon: accepted ? 'check_circle' : 'schedule', decLabel: accepted ? 'Accepted' : 'Pending review',
+        showPendingActions: !accepted, showAcceptedActions: accepted,
+        onToggle: () => this.toggleCase(c.id), onAccept: () => this.acceptCase(c.id), onReject: () => this.rejectCase(c.id), onEdit: () => {}, onOpen: () => {},
+      });
+    }));
+    const pillOrder = ['Positive', 'Negative', 'Edge', 'E2E', 'Functional'];
+    const typePills = pillOrder.filter(k => typeCounts[k]).map(k => ({ label: typeMeta[k].label, bg: typeMeta[k].bg, bd: typeMeta[k].bd, fg: typeMeta[k].fg, count: typeCounts[k] }));
+    const genTotal = reviewCases.length;
+    const totalCases = this.GROUPS.reduce((n, g) => n + g.cases.length, 0);
+    const allSelOn = genTotal > 0 && selectedCount === genTotal;
+    const allBox = cb(allSelOn);
+    const reviewUrl = (st.url && st.url.trim()) ? st.url.trim().replace(/^https?:\/\//, '') : 'staging.shopflow.app';
+
+    const appr = cb(st.saveApproval), suite = cb(st.saveSuite), plan = cb(st.savePlan);
+    const canStart = st.url.trim() && st.describe.trim();
+    const layoutSeg = (on) => ({ bg: on ? '#fff' : 'transparent', fg: on ? '#3F43EE' : '#6D6D74', sh: on ? '0 1px 2px rgba(0,0,0,.12)' : 'none' });
+    const lf = layoutSeg(st.layout === 'featured'), lr = layoutSeg(st.layout === 'row'), l2 = layoutSeg(st.layout === '2x2');
+    const layoutExplainMap = { featured: 'Suggested — promotes Auto Crawl as the primary entry point, with the other methods below.', row: 'Minimal — adds Auto Crawl as a 4th card in the existing row; layout otherwise unchanged.', '2x2': 'Restructured — four equal methods in a 2×2 grid, Auto Crawl highlighted.' };
+
+    return {
+      noop: () => {},
+      isSetup: st.screen === 'method' || st.screen === 'config',
+      isExec: isCrawl || isReview,
+      isMethod: st.screen === 'method', isConfig: st.screen === 'config', isCrawl, isReview,
+      stepLabel: 'Step ' + stepN + ' of 4', progressPct: (stepN * 25) + '%',
+
+      // method
+      selAi: () => this.select('ai'), selImport: () => this.select('import'), selRecord: () => this.select('record'),
+      goCrawlMethod: () => { this.select('crawl'); this.goConfig(); },
+      selManual: () => this.select('manual'),
+      layoutFeatured: st.layout === 'featured', layoutRow: st.layout === 'row', layout2x2: st.layout === '2x2',
+      showSwitcher: st.screen === 'method',
+      setLayoutFeatured: () => this.setLayout('featured'), setLayoutRow: () => this.setLayout('row'), setLayout2x2: () => this.setLayout('2x2'),
+      segFeaturedBg: lf.bg, segFeaturedFg: lf.fg, segFeaturedSh: lf.sh,
+      segRowBg: lr.bg, segRowFg: lr.fg, segRowSh: lr.sh,
+      seg2x2Bg: l2.bg, seg2x2Fg: l2.fg, seg2x2Sh: l2.sh,
+      layoutExplain: layoutExplainMap[st.layout],
+
+      // config fields
+      url: st.url, onUrl: this.setF('url'), describe: st.describe, onDescribe: this.setF('describe'),
+      env: st.env, onEnv: this.setF('env'),
+      authEnv: () => this.setAuth('env'), authCreds: () => this.setAuth('creds'), authNone: () => this.setAuth('none'),
+      envOpen: st.authMode === 'env', credsOpen: st.authMode === 'creds',
+      envBg: st.authMode === 'env' ? SEL_BG : '#fff', envRing: st.authMode === 'env' ? RING_SEL : RING_OFF, envDot: dot(st.authMode === 'env'),
+      credsBg: st.authMode === 'creds' ? SEL_BG : '#fff', credsRing: st.authMode === 'creds' ? RING_SEL : RING_OFF, credsDot: dot(st.authMode === 'creds'),
+      noneBg: st.authMode === 'none' ? SEL_BG : '#fff', noneRing: st.authMode === 'none' ? RING_SEL : RING_OFF, noneDot: dot(st.authMode === 'none'),
+      modeSafe: () => this.setMode('safe'), modeFull: () => this.setMode('full'),
+      safeBg: st.crawlMode === 'safe' ? SEL_BG : '#fff', safeRing: st.crawlMode === 'safe' ? RING_SEL : RING_OFF,
+      fullBg: st.crawlMode === 'full' ? 'rgba(238,63,63,.06)' : '#fff', fullRing: st.crawlMode === 'full' ? 'inset 0 0 0 2px #EE3F3F' : RING_OFF,
+      showFullWarn: st.crawlMode === 'full',
+      toggleConfig: () => this.setState(s => ({ configOpen: !s.configOpen })),
+      configOpen: st.configOpen, configChevron: st.configOpen ? 'expand_less' : 'expand_more',
+      backToMethod: () => this.backToMethod(), startCrawl: () => this.startCrawl(),
+      startBg: canStart ? '#3F43EE' : '#BFC1F8', startShadow: canStart ? '0 1px 2px rgba(0,0,0,.12)' : 'none',
+
+      // exec header
+      execBack: () => this.execBack(),
+      execTitle: isReview ? 'Review generated test cases' : 'Auto Crawl',
+      crawlUrl: st.crawlUrl, stage: st.stage, action: st.action, scanLabel: st.scanLabel,
+      crawlRunning: running, crawlDone: isCrawl && st.done,
+      pillBg: pill.bg, pillBorder: pill.border, pillDot: pill.dot, pillFg: pill.fg, pillAnim: pill.anim,
+      runBackground: () => this.runBackground(), stopKeep: () => this.stopKeep(), goReview: () => this.goReview(),
+
+      // stepper + metrics
+      stages, pages: st.pages, flows: st.flows, cases: st.cases, durationFmt: this.fmt(st.elapsed),
+      rerunCrawl: () => this.startCrawl(),
+      cursorLeft: st.cursorLeft, cursorTop: st.cursorTop,
+      hlLeft: st.hlLeft, hlTop: st.hlTop, hlW: st.hlW, hlH: st.hlH, hlOpacity: st.hlOpacity, hlLabel: st.hlLabel,
+
+      // tabs
+      tabActivity: () => this.setTab('activity'), tabMap: () => this.setTab('map'), tabLogs: () => this.setTab('logs'),
+      showActivity: tab === 'activity', showMap: tab === 'map', showLogs: tab === 'logs',
+      tabActBg: ta.bg, tabActFg: ta.fg, tabMapBg: tm.bg, tabMapFg: tm.fg, tabLogsBg: tl.bg, tabLogsFg: tl.fg,
+      tabActWt: ta.wt, tabActBd: ta.bd, tabMapWt: tm.wt, tabMapBd: tm.bd, tabLogsWt: tl.wt, tabLogsBd: tl.bd,
+      events, mapFlows, logs: this.LOGS,
+
+      // review sub-tabs
+      rvTabCases: () => this.setReviewTab('cases'), rvTabMap: () => this.setReviewTab('map'),
+      rvTabActivity: () => this.setReviewTab('activity'), rvTabGaps: () => this.setReviewTab('gaps'),
+      rvShowCases: rvTab === 'cases', rvShowMap: rvTab === 'map', rvShowActivity: rvTab === 'activity', rvShowGaps: rvTab === 'gaps',
+      rvCasesFg: rc.fg, rvCasesWt: rc.wt, rvCasesBd: rc.bd,
+      rvMapFg: rmp.fg, rvMapWt: rmp.wt, rvMapBd: rmp.bd,
+      rvActFg: rac.fg, rvActWt: rac.wt, rvActBd: rac.bd,
+      rvGapsFg: rg.fg, rvGapsWt: rg.wt, rvGapsBd: rg.bd,
+      reviewMap, reviewTimeline, reviewGaps, gapsCount: reviewGaps.length,
+      gapDrawer, gapDrawerOpen: !!gapDrawer, closeGap: () => this.closeGapDetail(),
+      selPillShow: rvTab === 'cases' && selectedCount > 0,
+      acceptSelected: () => this.acceptSelectedCases(),
+
+      // review (generated cases table)
+      reviewCases, typePills, genTotal, totalCases, acceptedCount, pendingCount, selectedCount,
+      reviewUrl, reviewUser: 'Aryan', reviewTime: 'Jun 30, 2026, 2:14 PM',
+      toggleAllSel: () => this.setAllSel(!allSelOn),
+      allBoxBg: allBox.bg, allBoxRing: allBox.ring, allBoxShow: allBox.show,
+      acceptAll: () => this.acceptAllCases(), rejectSelected: () => this.rejectSelectedCases(), addAccepted: () => {},
+      rejFg: selectedCount > 0 ? '#EE3F3F' : '#C2B4B4', rejBd: selectedCount > 0 ? '#F3B0B0' : '#EAD7D7',
+      addBg: acceptedCount > 0 ? '#3F43EE' : '#BFC1F8', addShadow: acceptedCount > 0 ? '0 1px 2px rgba(0,0,0,.12)' : 'none',
+
+      // toast
+      toastShown: st.toastShown, dismissToast: () => this.dismissToast(),
+    };
+  }
+}
+</script>
+</body>
+</html>
